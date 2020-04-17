@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ProjectsFilterChange } from '../../types';
+import { Sections } from '../../constants';
 import Section from '../../shared/Section';
 import Filters from './Filters';
 
@@ -13,8 +14,8 @@ const Projects: React.FC<Props> = (props: Props) => {
   const { onFilterChange, loading } = props;
 
   return (
-    <Section title="Projects">
-      <Filters onChange={onFilterChange} />
+    <Section type={Sections.Projects}>
+      <Filters onChange={onFilterChange}/>
       {loading && <>loading</>}
     </Section>
   );

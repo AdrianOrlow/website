@@ -1,32 +1,31 @@
 import React, { MouseEventHandler } from 'react';
 
-interface Props {
-  type?: 'contained' | 'outlined';
+type HTMLButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+
+interface Props extends HTMLButtonProps {
+  backgroundType?: 'contained' | 'outlined';
   size?: 'big' | 'small';
   color?: 'dark' | 'light';
-  children: JSX.Element | string;
-  onClick?(e: MouseEventHandler<HTMLButtonElement>): void;
 }
 
 import { Container } from './ButtonStyle';
 
 const Button: React.FC<Props> = (props: Props) => {
   const {
-    type = 'big',
+    backgroundType = 'big',
     size = 'contained',
     color = 'dark',
-    onClick,
-    children,
   } = props;
 
+  const data = {
+    ...props,
+    type: backgroundType,
+    size,
+    color,
+  };
+
   return (
-    <Container
-      type={type}
-      size={size}
-      color={color}
-      onClick={onClick}
-      children={children}
-    />
+    <Container {...data}/>
   );
 };
 

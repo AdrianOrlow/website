@@ -9,16 +9,16 @@ import {
 } from './HeaderStyle';
 
 const Header: React.FC = () => {
- return (
-   <Container>
-    <Inner>
-     <Logo/>
-     <Button>
-       <BarsIcon/>
-     </Button>
-    </Inner>
-   </Container>
- );
+  return (
+    <Container>
+      <Inner>
+        <Logo/>
+        <Button>
+          <BarsIcon/>
+        </Button>
+      </Inner>
+    </Container>
+  );
 };
 
 export default Header;

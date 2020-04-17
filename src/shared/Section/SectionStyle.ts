@@ -1,20 +1,25 @@
 import styled from 'styled-components';
-import { Colors } from '../../constants/index';
+import { Colors, Breakpoints } from '../../constants/index';
 
 interface ContainerProps {
   backgroundType: 'light' | 'dark';
 }
 
 export const Container = styled.section<ContainerProps>`
-  padding: 3rem;
+  padding: 2rem;
   
   ${(props: ContainerProps) => {
-    const backgroundColor = props.backgroundType === 'light'
-      ? Colors.whitePure
-      : Colors.whiteDark;
-    
-    return `background: ${backgroundColor}`;
-  }}
+  const backgroundColor = props.backgroundType === 'light'
+    ? Colors.whitePure
+    : Colors.whiteDark;
+
+  return `background: ${backgroundColor}`;
+}}
+`;
+
+export const Inner = styled.div`
+  max-width: ${Breakpoints.desktop};
+  margin: auto;
 `;
 
 export const Header = styled.header`
@@ -25,6 +30,7 @@ export const Header = styled.header`
 `;
 
 export const Divider = styled.div`
+  z-index: 1;
   margin: auto;
   background: ${Colors.blueGreyish};
   opacity: 0.5;
@@ -44,6 +50,6 @@ export const Title = styled.h2`
   color: ${Colors.blackBluish};
 `;
 
-export const Inner = styled.div`
+export const Content = styled.div`
 
 `;

@@ -1,9 +1,9 @@
 import Colors from './Colors';
 import Breakpoints from './Breakpoints';
-import Routes from './Routes';
+import Sections from './Sections';
 
 export {
   Colors,
   Breakpoints,
-  Routes,
+  Sections,
 };

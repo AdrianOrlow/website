@@ -54,7 +54,7 @@ const Element: React.FC<ElementProps> = (props: ElementProps) => {
     >
       {title}
     </Button>
-  )
+  );
 };
 
 export default Filters;

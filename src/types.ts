@@ -23,7 +23,9 @@ export interface BreakpointsType {
   desktop: string;
 }
 
-export interface RouteType {
+export type SectionsType = Record<string, SectionRouteType>;
+
+export interface SectionRouteType {
   title: string;
   hashKey: string;
 }
@@ -35,3 +37,14 @@ export enum ProjectsFilter {
 }
 
 export type ProjectsFilterChange = (filter: ProjectsFilter) => void;
+
+export interface SkillCategoryType {
+  title: string;
+  list: (string | JSX.Element)[];
+}
+
+export interface SocialLinkType {
+  title: string;
+  url: string;
+  icon: JSX.Element;
+}

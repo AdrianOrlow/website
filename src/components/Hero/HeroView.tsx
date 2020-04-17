@@ -11,22 +11,22 @@ import {
 } from './HeroStyle';
 
 const Hero: React.FC = () => {
- return (
-  <Container>
-    <Inner>
-      <Title>Adrian Orłów</Title>
-      <Subtitle>Web Developer</Subtitle>
-      <Actions>
-        <Button>
-          Projects
-        </Button>
-        <Button type="outlined">
-          My CV
-        </Button>
-      </Actions>
-    </Inner>
-  </Container>
- );
+  return (
+    <Container>
+      <Inner>
+        <Title>Adrian Orłów</Title>
+        <Subtitle>Web Developer</Subtitle>
+        <Actions>
+          <Button>
+            Projects
+          </Button>
+          <Button backgroundType="outlined">
+            My CV
+          </Button>
+        </Actions>
+      </Inner>
+    </Container>
+  );
 };
 
 export default Hero;

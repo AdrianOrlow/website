@@ -1,14 +1,17 @@
 import styled from 'styled-components';
+import { rgba } from 'polished';
 import { Colors, Breakpoints } from '../../constants/index';
 import BarsIconSVG from '../../assets/vectors/fa-bars-solid.svg';
 
 export const Container = styled.header`
+  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
   height: 60px;
   width: 100%;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 4px ${rgba(Colors.blackPure, 0.05)};
+  background: ${Colors.whitePure};
 `;
 
 export const Inner = styled.div`

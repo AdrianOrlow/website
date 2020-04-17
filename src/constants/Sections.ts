@@ -1,6 +1,6 @@
-import { RouteType } from '../types';
+import { SectionsType } from '../types';
 
-const Routes: Record<string, RouteType> = {
+const Sections: SectionsType = {
   Hero: {
     title: 'Home',
     hashKey: '',
@@ -19,4 +19,4 @@ const Routes: Record<string, RouteType> = {
   }
 };
 
-export default Routes;
+export default Sections;

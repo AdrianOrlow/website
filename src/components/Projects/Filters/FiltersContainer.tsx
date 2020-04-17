@@ -21,7 +21,7 @@ const Filters: React.FC<Props> = (props: Props) => {
       selectedFilter={selectedFilter}
       onChange={handleChange}
     />
-  )
+  );
 };
 
 export default Filters;

@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
       onFilterChange={handleFilterChange}
       loading={loading}
     />
-  )
+  );
 };
 
 export default Projects;

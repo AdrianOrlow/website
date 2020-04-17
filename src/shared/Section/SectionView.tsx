@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { SectionRouteType } from '../../types';
 import {
   Container,
   Inner,
+  Content,
   Title,
   Header,
   Divider,
@@ -10,22 +12,26 @@ import {
 
 interface Props {
   backgroundType?: 'light' | 'dark';
-  title: string;
+  type: SectionRouteType;
   children: JSX.Element | JSX.Element[] | string;
 }
 
 const Section: React.FC<Props> = (props: Props) => {
-  const { title, children, backgroundType = 'light' } = props;
+  const { type, children, backgroundType = 'light' } = props;
+
+  const { title, hashKey } = type;
 
   return (
-    <Container backgroundType={backgroundType}>
-      <Header>
-        <Divider/>
-        <Title>{title}</Title>
-        <Divider/>
-      </Header>
+    <Container backgroundType={backgroundType} id={hashKey}>
       <Inner>
-        {children}
+        <Header>
+          <Divider/>
+          <Title>{title}</Title>
+          <Divider/>
+        </Header>
+        <Content>
+          {children}
+        </Content>
       </Inner>
     </Container>
   );
