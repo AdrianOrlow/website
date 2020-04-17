@@ -1,7 +1,7 @@
 {
-  "name": "hellodesign",
+  "name": "orlow-me",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal website",
   "main": "index.js",
   "scripts": {
     "dev": "next -p 8080",
@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "Adrian Orlow <adrian[at]orlow.me>",
-  "license": "",
+  "license": "MIT",
   "dependencies": {
     "@svgr/webpack": "^5.1.0",
     "next": "^9.2.0",

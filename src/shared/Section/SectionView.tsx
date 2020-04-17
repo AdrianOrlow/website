@@ -11,7 +11,7 @@ import {
 interface Props {
   backgroundType?: 'light' | 'dark';
   title: string;
-  children: JSX.Element | string;
+  children: JSX.Element | JSX.Element[] | string;
 }
 
 const Section: React.FC<Props> = (props: Props) => {

@@ -40,7 +40,7 @@ export const Title = styled.h2`
   font-size: 1.5rem;
   font-weight: 500;
   margin: 0;
-  padding: 0 0.75rem;
+  padding: 0 1rem;
   color: ${Colors.blackBluish};
 `;
 

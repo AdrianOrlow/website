@@ -27,3 +27,11 @@ export interface RouteType {
   title: string;
   hashKey: string;
 }
+
+export enum ProjectsFilter {
+  All,
+  Frontend,
+  Backend,
+}
+
+export type ProjectsFilterChange = (filter: ProjectsFilter) => void;

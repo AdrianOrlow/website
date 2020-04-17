@@ -1,1 +1,1 @@
-export { default } from './ProjectsView';
+export { default } from './ProjectsContainer';
