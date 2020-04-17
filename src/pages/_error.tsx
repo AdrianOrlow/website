@@ -1,9 +1,4 @@
-export interface _error {
-  dsdfs: string;
-}
-
-/*import React from 'react';
-import ErrorInfo from '../components/ErrorInfo';
+import React from 'react';
 
 interface Props {
   statusCode: number;
@@ -11,7 +6,7 @@ interface Props {
 
 const Error = ({ statusCode }: Props) => (
   <main>
-    <ErrorInfo statusCode={statusCode} />
+    {statusCode}
   </main>
 );
 
@@ -21,4 +16,3 @@ Error.getInitialProps = ({ res, err }) => {
 };
 
 export default Error;
-*/
