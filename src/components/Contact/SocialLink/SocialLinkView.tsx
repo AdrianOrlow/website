@@ -1,7 +1,11 @@
 import React from 'react';
 import { SocialLinkType } from '../../../types';
 
-import { Container } from './SocialLinkStyle';
+import {
+  Container,
+  Icon,
+  Title,
+} from './SocialLinkStyle';
 
 interface Props {
   data: SocialLinkType;
@@ -11,11 +15,10 @@ const SocialLink: React.FC<Props> = ({ data }: Props) => {
   const { title, icon, url } = data;
 
   return (
-    <Container
-      as="a"
-      href={url}
-      children={icon}
-    />
+    <Container href={url}>
+      <Icon>{icon}</Icon>
+      <Title>{title}</Title>
+    </Container>
   );
 };
 

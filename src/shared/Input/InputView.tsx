@@ -4,7 +4,7 @@ import { Container } from './InputStyle';
 
 type Props = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
-const Input: React.FC<Props> = (props: Props) => (
+const Input: React.FC<Props> = ({ ...props }: Props) => (
   <Container {...props}/>
 );
 

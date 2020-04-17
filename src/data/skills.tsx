@@ -51,8 +51,8 @@ const skills: SkillCategoryType[] = [
   {
     title: 'Human languages',
     list: [
-      <Fragment>Polish&nbsp;–&nbsp;<i>native</i></Fragment>,
-      <Fragment>English&nbsp;–&nbsp;<i>advanced</i></Fragment>
+      'Polish – native',
+      'English – advanced',
     ]
   }
 ];

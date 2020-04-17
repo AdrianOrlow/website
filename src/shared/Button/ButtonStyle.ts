@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
-import { Colors } from '../../constants';
+import { Colors, Breakpoints } from '../../constants';
 
 interface ContainerProps {
   type: 'contained' | 'outlined';
@@ -59,13 +59,23 @@ const sizeStyle = (props: ContainerProps) => (
   props.size === 'small'
     ? `
       padding: 0.5rem 1rem;
+      
+      @media only screen and (min-width: ${Breakpoints.mobile}) {
+       padding: 0.75rem 1.25rem;
+       font-size: 1.25rem;
+      }
     `
     : `
       padding: 0.75rem 1rem;
+      
+      @media only screen and (min-width: ${Breakpoints.mobile}) {
+       padding: 1rem 1.25rem;
+       font-size: 1.25rem;
+      }
     `
 );
 
-export const Container = styled.button<HTMLButtonElement & ContainerProps>`
+export const Container = styled.button<ContainerProps>`
   border-radius: 0.25rem;
   font-weight: 500;
   border: 0;

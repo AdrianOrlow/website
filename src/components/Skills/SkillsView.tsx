@@ -19,7 +19,7 @@ interface SkillsElementProps {
 
 const Skills: React.FC = () => {
   const skillsElements = skills.map(skill => (
-    <Element skill={skill}/>
+    <Element key={skill.title} skill={skill}/>
   ));
 
   return (
@@ -35,7 +35,7 @@ const Element: React.FC<SkillsElementProps> = ({ skill }: SkillsElementProps) =>
   const { title, list } = skill;
 
   const skillsList = list.map(value => (
-    <Tag>{value}</Tag>
+    <Tag key={value}>{value}</Tag>
   ));
 
   return (

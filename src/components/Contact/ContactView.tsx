@@ -6,19 +6,22 @@ import SocialLink from './SocialLink';
 import { socialLinks } from '../../data';
 import {
   Container,
-  SocialLinks
+  SocialLinks,
+  SocialLinksWrapper,
 } from './ContactStyle';
 import Form from './Form';
 
 const Contact: React.FC = () => {
   const socialElements = socialLinks.map(link => (
-    <SocialLink data={link}/>
+    <SocialLink key={link.url} data={link}/>
   ));
 
   return (
     <Section type={Sections.Contact}>
       <Container>
-        <SocialLinks>{socialElements}</SocialLinks>
+        <SocialLinksWrapper>
+          <SocialLinks>{socialElements}</SocialLinks>
+        </SocialLinksWrapper>
         <Form/>
       </Container>
     </Section>

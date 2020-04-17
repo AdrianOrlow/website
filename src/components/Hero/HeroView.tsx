@@ -1,10 +1,16 @@
 import React from 'react';
 
+import { Sections } from '../../constants';
+import Header from '../Header';
 import Button from '../../shared/Button';
 
 import {
   Container,
   Inner,
+  Wrapper,
+  TitleWrapper,
+  Logo,
+  Text,
   Title,
   Subtitle,
   Actions,
@@ -12,19 +18,31 @@ import {
 
 const Hero: React.FC = () => {
   return (
-    <Container>
-      <Inner>
-        <Title>Adrian Orłów</Title>
-        <Subtitle>Web Developer</Subtitle>
-        <Actions>
-          <Button>
-            Projects
-          </Button>
-          <Button backgroundType="outlined">
-            My CV
-          </Button>
-        </Actions>
-      </Inner>
+    <Container
+      type={Sections.Hero}
+      showHeader={false}
+      backgroundType='dark'
+    >
+      <Header/>
+      <Wrapper>
+        <Inner>
+          <TitleWrapper>
+            <Logo showTitle={false}/>
+            <Text>
+              <Title>Adrian Orłów</Title>
+              <Subtitle>Web Developer</Subtitle>
+            </Text>
+          </TitleWrapper>
+          <Actions>
+            <Button>
+              Projects
+            </Button>
+            <Button backgroundType="outlined">
+              My CV
+            </Button>
+          </Actions>
+        </Inner>
+      </Wrapper>
     </Container>
   );
 };

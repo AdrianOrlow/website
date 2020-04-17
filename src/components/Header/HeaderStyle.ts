@@ -1,17 +1,9 @@
 import styled from 'styled-components';
-import { rgba } from 'polished';
 import { Colors, Breakpoints } from '../../constants/index';
 import BarsIconSVG from '../../assets/vectors/fa-bars-solid.svg';
 
 export const Container = styled.header`
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 60px;
   width: 100%;
-  box-shadow: 0px 4px 4px ${rgba(Colors.blackPure, 0.05)};
-  background: ${Colors.whitePure};
 `;
 
 export const Inner = styled.div`
@@ -19,10 +11,14 @@ export const Inner = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: ${Breakpoints.desktop};
-  padding: 0 1rem;
+  margin: auto;
   height: 100%;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: ${Colors.blueGreyish};
+  
+  @media only screen and (min-width: ${Breakpoints.mobile}) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -39,4 +35,9 @@ export const Button = styled.button`
 export const BarsIcon = styled(BarsIconSVG)`
   height: 1.25rem;
   width: 1.25rem;
+  
+  @media only screen and (min-width: ${Breakpoints.mobile}) {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
 `;

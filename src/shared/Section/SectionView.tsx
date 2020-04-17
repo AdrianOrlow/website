@@ -12,23 +12,37 @@ import {
 
 interface Props {
   backgroundType?: 'light' | 'dark';
+  showHeader?: boolean;
+  className?: string;
   type: SectionRouteType;
   children: JSX.Element | JSX.Element[] | string;
 }
 
 const Section: React.FC<Props> = (props: Props) => {
-  const { type, children, backgroundType = 'light' } = props;
+  const {
+    type,
+    children,
+    className,
+    backgroundType = 'light',
+    showHeader = true,
+  } = props;
 
   const { title, hashKey } = type;
 
   return (
-    <Container backgroundType={backgroundType} id={hashKey}>
+    <Container
+      id={hashKey}
+      className={className}
+      backgroundType={backgroundType}
+    >
       <Inner>
-        <Header>
-          <Divider/>
-          <Title>{title}</Title>
-          <Divider/>
-        </Header>
+        {showHeader && (
+          <Header>
+            <Divider/>
+            <Title>{title}</Title>
+            <Divider/>
+          </Header>
+        )}
         <Content>
           {children}
         </Content>

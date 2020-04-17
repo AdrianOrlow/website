@@ -2,8 +2,8 @@ import { SectionsType } from '../types';
 
 const Sections: SectionsType = {
   Hero: {
-    title: 'Home',
-    hashKey: '',
+    title: 'Hero',
+    hashKey: 'hero',
   },
   Projects: {
     title: 'Projects',

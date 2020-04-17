@@ -8,13 +8,21 @@ interface ContainerProps {
 export const Container = styled.section<ContainerProps>`
   padding: 2rem;
   
+  @media only screen and (min-width: ${Breakpoints.mediumMobile}) {
+    padding: 3rem;
+  }
+  
+  @media only screen and (min-width: ${Breakpoints.mediumMobile}) {
+    padding: 4rem;
+  }
+  
   ${(props: ContainerProps) => {
-  const backgroundColor = props.backgroundType === 'light'
-    ? Colors.whitePure
-    : Colors.whiteDark;
-
-  return `background: ${backgroundColor}`;
-}}
+    const backgroundColor = props.backgroundType === 'light'
+      ? Colors.whitePure
+      : Colors.whiteDark;
+  
+    return `background: ${backgroundColor}`;
+  }}
 `;
 
 export const Inner = styled.div`
@@ -27,6 +35,14 @@ export const Header = styled.header`
   grid-template-columns: 1fr auto 1fr;
   width: 100%;
   padding-bottom: 1.5rem;
+  
+  @media only screen and (min-width: ${Breakpoints.mediumMobile}) {
+    padding-bottom: 2rem;
+  }
+  
+  @media only screen and (min-width: ${Breakpoints.mobile}) {
+    padding-bottom: 3rem;
+  }
 `;
 
 export const Divider = styled.div`
@@ -48,6 +64,11 @@ export const Title = styled.h2`
   margin: 0;
   padding: 0 1rem;
   color: ${Colors.blackBluish};
+  
+  @media only screen and (min-width: ${Breakpoints.mobile}) {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+  }
 `;
 
 export const Content = styled.div`

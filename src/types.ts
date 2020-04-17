@@ -40,7 +40,7 @@ export type ProjectsFilterChange = (filter: ProjectsFilter) => void;
 
 export interface SkillCategoryType {
   title: string;
-  list: (string | JSX.Element)[];
+  list: string[];
 }
 
 export interface SocialLinkType {

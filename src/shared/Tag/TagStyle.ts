@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Colors } from '../../constants';
+import { Colors, Breakpoints } from '../../constants';
 
 export const Container = styled.div`
   display: inline-flex;
@@ -8,4 +8,8 @@ export const Container = styled.div`
   font-weight: 500;
   color: ${Colors.blueGreyish};
   background: ${Colors.blueLight};
+  
+  @media only screen and (min-width: ${Breakpoints.mobile}) {
+   padding: 0.75rem;
+  }
 `;
