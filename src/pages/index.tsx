@@ -1,8 +1,14 @@
 import React from 'react';
 
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import Projects from '../components/Projects';
+
 const Main = () => (
   <main>
-      dsaffdsasdaf
+      <Header/>
+      <Hero/>
+      <Projects/>
   </main>
 );
 
