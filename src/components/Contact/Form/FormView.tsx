@@ -1,19 +1,57 @@
 import React from 'react';
+import { FormStateProxy } from 'react-hook-form';
+import Reaptcha from 'reaptcha';
 
+import Button from '../../../shared/Button';
+import { ContactFormData, ContactFormResult } from '../../../types';
 import {
   Container,
   Input,
   TextArea,
+  Result,
 } from './FormStyle';
-import Button from '../../../shared/Button';
+import { initialResult } from './FormUtils';
 
 interface Props {
   onSubmit(event: React.FormEvent<HTMLFormElement>): void;
+  result: ContactFormResult;
+  formState: FormStateProxy<ContactFormData>;
   register: any;
+  setValue(name: string, value?: string, shouldValidate?: boolean): void;
 }
 
 const Form: React.FC<Props> = (props: Props) => {
-  const { onSubmit, register } = props;
+  const {
+    onSubmit,
+    register,
+    formState,
+    result,
+    setValue,
+  } = props;
+  const { isSubmitting, dirty } = formState;
+
+  const recaptchaRef = React.createRef<Reaptcha>();
+  const [captchaReady, setCaptchaReady] = React.useState<boolean>(false);
+
+  const handleTokenVerify = (token: string) => (
+    setValue('recaptcha', token)
+  );
+
+  const handleCaptchaLoaded = () => (
+    setCaptchaReady(true)
+  );
+
+  React.useEffect(() => {
+    captchaReady && recaptchaRef.current.execute();
+  }, [captchaReady]);
+
+  React.useEffect(() => {
+    dirty && recaptchaRef.current.renderExplicitly();
+  }, [dirty]);
+
+  React.useEffect(() => {
+    register({ name: 'recaptcha' }, { required: true });
+  }, []);
 
   return (
     <Container onSubmit={onSubmit}>
@@ -21,32 +59,53 @@ const Form: React.FC<Props> = (props: Props) => {
         style={{ gridArea: 'name' }}
         placeholder="Name"
         name="name"
-        ref={register}
+        type="text"
+        ref={register({ required: true })}
       />
       <Input
         style={{ gridArea: 'email' }}
         placeholder="E-mail"
         name="email"
-        ref={register}
+        type="email"
+        ref={register({ required: true, pattern: /[^@\s]+@[^@\s]+\.[^@\s]+/ })}
       />
       <Input
         style={{ gridArea: 'topic' }}
         placeholder="Topic"
         name="topic"
-        ref={register}
+        type="text"
+        ref={register({ required: true })}
       />
       <TextArea
         style={{ gridArea: 'message' }}
         placeholder="Message"
         name="message"
-        ref={register}
+        type="text"
+        ref={register({ required: true })}
+      />
+      <Reaptcha
+        size="invisible"
+        theme="dark"
+        onRender={handleCaptchaLoaded}
+        onVerify={handleTokenVerify}
+        sitekey={process.env.RECAPTCHA_CLIENT_KEY}
+        ref={recaptchaRef}
+        explicit
       />
       <Button
         style={{ gridArea: 'send' }}
+        disabled={isSubmitting || !dirty}
+        loading={isSubmitting}
         type="submit"
       >
         Send
       </Button>
+      <Result
+        show={result !== initialResult}
+        isError={result.isError}
+      >
+        {result.message}
+      </Result>
     </Container>
   );
 };

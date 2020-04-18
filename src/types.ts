@@ -48,3 +48,16 @@ export interface SocialLinkType {
   url: string;
   icon: JSX.Element;
 }
+
+export interface ContactFormData {
+  name: string;
+  email: string;
+  topic: string;
+  message: string;
+  recaptcha: string;
+}
+
+export interface ContactFormResult {
+  isError: boolean;
+  message: string;
+}

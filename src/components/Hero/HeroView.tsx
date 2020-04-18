@@ -1,4 +1,5 @@
 import React from 'react';
+import { scroller } from 'react-scroll';
 
 import { Sections } from '../../constants';
 import Header from '../Header';
@@ -17,6 +18,11 @@ import {
 } from './HeroStyle';
 
 const Hero: React.FC = () => {
+  const scroll = () => scroller.scrollTo('projects', {
+    duration: 1000,
+    smooth: true,
+  });
+
   return (
     <Container
       type={Sections.Hero}
@@ -27,17 +33,21 @@ const Hero: React.FC = () => {
       <Wrapper>
         <Inner>
           <TitleWrapper>
-            <Logo showTitle={false}/>
+            <Logo/>
             <Text>
               <Title>Adrian Orłów</Title>
               <Subtitle>Web Developer</Subtitle>
             </Text>
           </TitleWrapper>
           <Actions>
-            <Button>
+            <Button
+              onClick={scroll}
+            >
               Projects
             </Button>
-            <Button backgroundType="outlined">
+            <Button
+              backgroundType="outlined"
+            >
               My CV
             </Button>
           </Actions>

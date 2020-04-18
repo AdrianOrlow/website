@@ -15,7 +15,10 @@ const SocialLink: React.FC<Props> = ({ data }: Props) => {
   const { title, icon, url } = data;
 
   return (
-    <Container href={url}>
+    <Container
+      href={url}
+      target="blank"
+    >
       <Icon>{icon}</Icon>
       <Title>{title}</Title>
     </Container>

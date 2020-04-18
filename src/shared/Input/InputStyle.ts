@@ -17,6 +17,7 @@ export const Container = styled.input`
   }
   
   &:focus {
+    outline: none;
     background: ${darken(0.025, Colors.fog)};
     
     &::placeholder {

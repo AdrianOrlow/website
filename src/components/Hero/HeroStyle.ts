@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
+
 import { Colors, Breakpoints } from '../../constants';
 import LogoSVG from '../../assets/vectors/logo.svg';
 import Section from '../../shared/Section';

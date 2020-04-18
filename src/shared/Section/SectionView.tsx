@@ -31,7 +31,7 @@ const Section: React.FC<Props> = (props: Props) => {
 
   return (
     <Container
-      id={hashKey}
+      name={hashKey}
       className={className}
       backgroundType={backgroundType}
     >

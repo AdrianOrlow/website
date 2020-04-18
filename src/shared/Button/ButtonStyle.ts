@@ -76,12 +76,20 @@ const sizeStyle = (props: ContainerProps) => (
 );
 
 export const Container = styled.button<ContainerProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 0.25rem;
   font-weight: 500;
   border: 0;
   background: transparent;
   transition: 0.2s ease-in-out;
   cursor: pointer;
+  
+  svg {
+    height: 1em;
+    width: 1em;
+  }
   
   ${fulfillmentStyle}
   ${sizeStyle}

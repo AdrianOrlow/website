@@ -11,3 +11,7 @@ html, body {
 main {
     overflow: hidden;
 }
+
+:focus {
+    outline: #52616D auto 1px;
+}
