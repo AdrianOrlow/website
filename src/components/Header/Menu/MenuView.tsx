@@ -9,6 +9,7 @@ import {
   List,
   TimesIcon,
   Button,
+  ListElement,
 } from './MenuStyle';
 
 interface Props {
@@ -29,27 +30,33 @@ const Menu: React.FC<Props> = ({ show, onClose }: Props) => (
           <TimesIcon/>
         </Button>
         <List>
-          <Link
-            to={Sections.Projects.hashKey}
-            onClick={onClose}
-            smooth
-          >
-            Projects
-          </Link>
-          <Link
-            to={Sections.Skills.hashKey}
-            onClick={onClose}
-            smooth
-          >
-            Skills
-          </Link>
-          <Link
-            to={Sections.Contact.hashKey}
-            onClick={onClose}
-            smooth
-          >
-            Contact
-          </Link>
+          <ListElement>
+            <Link
+              to={Sections.Projects.hashKey}
+              onClick={onClose}
+              smooth
+            >
+              Projects
+            </Link>
+          </ListElement>
+          <ListElement>
+            <Link
+              to={Sections.Skills.hashKey}
+              onClick={onClose}
+              smooth
+            >
+              Skills
+            </Link>
+          </ListElement>
+          <ListElement>
+            <Link
+              to={Sections.Contact.hashKey}
+              onClick={onClose}
+              smooth
+            >
+              Contact
+            </Link>
+          </ListElement>
         </List>
       </Inner>
     </Container>

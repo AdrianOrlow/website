@@ -18,6 +18,7 @@ export interface ColorsType {
 }
 
 export interface BreakpointsType {
+  smallMobile: string;
   mediumMobile: string;
   mobile: string;
   desktop: string;
@@ -30,13 +31,13 @@ export interface SectionRouteType {
   hashKey: string;
 }
 
-export enum ProjectsFilter {
+export enum ProjectFilter {
   All,
   Frontend,
   Backend,
 }
 
-export type ProjectsFilterChange = (filter: ProjectsFilter) => void;
+export type ProjectsFilterChange = (filter: ProjectFilter) => void;
 
 export interface SkillCategoryType {
   title: string;
@@ -60,4 +61,33 @@ export interface ContactFormData {
 export interface ContactFormResult {
   isError: boolean;
   message: string;
+}
+
+export enum ProjectPriority {
+  Low,
+  Medium,
+  High,
+}
+
+export interface ProjectType {
+  id: number;
+  title: string;
+  imagesFolder?: string;
+  description: string;
+  license: string;
+  filter: ProjectFilter;
+  priority: ProjectPriority;
+  backgroundColor: string;
+  technologies: ProjectTechnologyType[];
+  links: ProjectLinksType;
+}
+
+export interface ProjectTechnologyType {
+  title: string;
+  highPriority?: boolean;
+}
+
+export interface ProjectLinksType {
+  source?: string;
+  demo?: string;
 }

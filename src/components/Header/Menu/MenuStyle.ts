@@ -45,6 +45,11 @@ export const List = styled.ul`
   margin: auto;
 `;
 
+export const ListElement = styled.li`
+  display: block;
+  text-align: center;
+`;
+
 export const Link = styled(ScrollLink)`
   font-weight: 600;
   color: ${Colors.blueGreyish};

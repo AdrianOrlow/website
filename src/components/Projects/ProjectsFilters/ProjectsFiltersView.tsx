@@ -1,39 +1,39 @@
 import React from 'react';
-import { ProjectsFilter, ProjectsFilterChange } from '../../../types';
+import { ProjectFilter, ProjectsFilterChange } from '../../../types';
 
-import { Container } from './FiltersStyle';
+import { Container } from './ProjectsFiltersStyle';
 import Button from '../../../shared/Button';
 
 interface FiltersProps {
-  selectedFilter: ProjectsFilter;
+  selectedFilter: ProjectFilter;
   onChange: ProjectsFilterChange;
 }
 
 interface ElementProps extends FiltersProps {
   title: string;
-  type: ProjectsFilter;
+  type: ProjectFilter;
 }
 
-const Filters: React.FC<FiltersProps> = (props: FiltersProps) => {
+const ProjectsFilters: React.FC<FiltersProps> = (props: FiltersProps) => {
   const { selectedFilter, onChange } = props;
 
   return (
     <Container>
       <Element
         title="All"
-        type={ProjectsFilter.All}
+        type={ProjectFilter.All}
         selectedFilter={selectedFilter}
         onChange={onChange}
       />
       <Element
         title="Frontend"
-        type={ProjectsFilter.Frontend}
+        type={ProjectFilter.Frontend}
         selectedFilter={selectedFilter}
         onChange={onChange}
       />
       <Element
         title="Backend"
-        type={ProjectsFilter.Backend}
+        type={ProjectFilter.Backend}
         selectedFilter={selectedFilter}
         onChange={onChange}
       />
@@ -57,4 +57,4 @@ const Element: React.FC<ElementProps> = (props: ElementProps) => {
   );
 };
 
-export default Filters;
+export default ProjectsFilters;

@@ -6,7 +6,11 @@ interface ContainerProps {
 }
 
 export const Container = styled.section<ContainerProps>`
-  padding: 2rem;
+  padding: 2rem 1rem;
+  
+  @media only screen and (min-width: ${Breakpoints.smallMobile}) {
+    padding: 2rem;
+  }
   
   @media only screen and (min-width: ${Breakpoints.mediumMobile}) {
     padding: 3rem;
