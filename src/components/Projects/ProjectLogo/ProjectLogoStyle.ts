@@ -10,14 +10,20 @@ export const Container = styled.div`
   padding: 4rem;
   width: 100%;
   box-sizing: border-box;
+  height: 10rem;
+  
+  @media only screen and (min-width: ${Breakpoints.desktop}) {
+    height: 12rem;
+  }
 `;
 
 export const Image = styled.img`
-  height: ${childrenHeights[0]};
+  max-height: ${childrenHeights[0]};
   width: auto;
+  max-width: 100%;
   
   @media only screen and (min-width: ${Breakpoints.desktop}) {
-    height: ${childrenHeights[1]};
+    max-height: ${childrenHeights[1]};
   }
 `;
 
@@ -25,9 +31,9 @@ export const TextLogo = styled.span`
   text-align: center;
   font-weight: 600;
   color: ${Colors.fog};
-  font-size: ${childrenHeights[0]};
+  font-size: 1.5rem;
   
   @media only screen and (min-width: ${Breakpoints.desktop}) {
-    font-size: ${childrenHeights[1]};
+    font-size: 2rem;
   }
 `;

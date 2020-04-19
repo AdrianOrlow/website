@@ -23,9 +23,9 @@ const ProjectCard: React.FC<Props> = ({ project }: Props) => {
     technologies,
   } = project;
 
-  const highPriorityTechnologies = technologies.filter(technology => technology.highPriority);
+  const highPriorityTechnologies = technologies.filter(technology => technology.showOnCard);
   const technologiesList = highPriorityTechnologies.map(technology => (
-    <Tag>{technology.title}</Tag>
+    <Tag key={technology.title}>{technology.title}</Tag>
   ));
 
   const [showModal, setShowModal] = React.useState<boolean>(false);

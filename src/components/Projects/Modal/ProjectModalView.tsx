@@ -1,6 +1,5 @@
 import React from 'react';
 import { ProjectType } from '../../../types';
-import Link  from 'next/link';
 import { CSSTransition } from 'react-transition-group';
 
 import {
@@ -9,7 +8,6 @@ import {
   Header,
   TimesIcon,
   Inner,
-  Title,
   Description,
   SectionWrapper,
   SectionTitle,
@@ -31,7 +29,6 @@ const ProjectModal: React.FC<Props> = (props: Props) => {
   const { project, onClose, show } = props;
   const {
     backgroundColor,
-    title,
     description,
     license,
     technologies,
@@ -40,15 +37,12 @@ const ProjectModal: React.FC<Props> = (props: Props) => {
   const { source, demo } = links;
 
   const technologiesList = technologies.map(technology => (
-    <Tag>{technology.title}</Tag>
+    <Tag key={technology.title}>{technology.title}</Tag>
   ));
 
-  const handleOverlayClick = (event) => {
-    event.preventDefault();
-    if (event.target === event.currentTarget) {
-      onClose()
-    }
-  };
+  const handleOverlayClick = (event) => (
+    event.target === event.currentTarget && onClose()
+  );
 
   return (
     <CSSTransition
@@ -69,10 +63,9 @@ const ProjectModal: React.FC<Props> = (props: Props) => {
             </BareButtonStyle>
           </Header>
           <Inner>
-            <div>
-              <Title>{title}</Title>
+            <SectionWrapper>
               <Description>{description}</Description>
-            </div>
+            </SectionWrapper>
             <SectionWrapper>
               <SectionTitle>Technologies:</SectionTitle>
               <TechnologiesList>
@@ -85,22 +78,22 @@ const ProjectModal: React.FC<Props> = (props: Props) => {
                 <LicenseTitle>{license}</LicenseTitle>
               </SectionTitle>
             </SectionWrapper>
-            {source || demo && (
+            <SectionWrapper>
               <Actions>
                 {source && (
                   <ButtonStyle
-                    as={Link}
-                    to={source}
+                    as="a"
+                    href={source}
                     target="_blank"
                     size="small"
                   >
-
+                    source
                   </ButtonStyle>
                 )}
                 {demo && (
                   <ButtonStyle
-                    as={Link}
-                    to={demo}
+                    as="a"
+                    href={demo}
                     target="_blank"
                     size="small"
                   >
@@ -108,7 +101,7 @@ const ProjectModal: React.FC<Props> = (props: Props) => {
                   </ButtonStyle>
                 )}
               </Actions>
-            )}
+            </SectionWrapper>
           </Inner>
         </Container>
       </Overlay>

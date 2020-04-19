@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Breakpoints, Colors } from '../../constants/index';
+import { TransitionGroup } from 'react-transition-group';
 
 export const Container = styled.div`
   display: grid;
@@ -11,7 +12,7 @@ export const Container = styled.div`
   }
 `;
 
-export const List = styled.ul`
+export const List = styled.ul.attrs({ as: TransitionGroup })`
   padding: 0;
   margin: 0;
   display: grid;
@@ -24,5 +25,19 @@ export const List = styled.ul`
   
   @media only screen and (min-width: ${Breakpoints.desktop}) {
     grid-gap: 1.5rem;
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+
+  button {
+    margin: auto;
+  }
+  
+  a {
+    text-decoration: none;
+    margin-left: auto;
+    display: inline-block;
   }
 `;

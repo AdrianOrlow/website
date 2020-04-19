@@ -1,12 +1,11 @@
 import styled from 'styled-components';
+import { rgba } from 'polished';
 import { Breakpoints, Colors } from '../../../constants';
 import TimesIconSVG from '../../../assets/vectors/fa-times.svg';
 import {
-  Title,
   Description,
   TechnologiesList as CardTechnologiesList
 } from '../ProjectCard/ProjectCardStyle';
-import { rgba } from 'polished';
 
 export const Overlay = styled.div`
   z-index: 500;
@@ -27,12 +26,19 @@ export const Container = styled.div`
   border-radius: 4px;
   overflow: hidden;
   max-width: 90vw;
+  min-width: 15rem;
+  
+  @media only screen and (min-width: ${Breakpoints.mediumMobile}) {
+    width: 30rem;
+  }
 `;
 
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem;
+  font-size: 1rem;
   
   img {
     height: 1rem;
@@ -44,6 +50,10 @@ export const Header = styled.div`
   
   @media only screen and (min-width: ${Breakpoints.mediumMobile}) {
     padding: 1.5rem;
+    
+    span {
+      font-size: 1.25rem;
+    }
   }
   
   @media only screen and (min-width: ${Breakpoints.desktop}) {
@@ -65,9 +75,13 @@ export const TimesIcon = styled(TimesIconSVG)`
     fill: ${Colors.fog};
   }
   
+  @media only screen and (min-width: ${Breakpoints.mediumMobile}) {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+  
   @media only screen and (min-width: ${Breakpoints.desktop}) {
     height: 1.5rem;
-    width: 1.25rem;
   }
 `;
 
@@ -93,11 +107,11 @@ export const SectionWrapper = styled.section``;
 export const SectionTitle = styled.h3`
   margin: 0;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: ${Colors.blueGreyish};
   
   @media only screen and (min-width: ${Breakpoints.smallMobile}) {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
   }
 `;
 
@@ -109,6 +123,10 @@ export const Actions = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
+  
+  a {
+    text-decoration: none;
+  }
 `;
 
 export const TechnologiesList = styled(CardTechnologiesList)`
@@ -124,6 +142,5 @@ export const TechnologiesList = styled(CardTechnologiesList)`
 `;
 
 export {
-  Title,
   Description,
 }

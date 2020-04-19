@@ -36,13 +36,13 @@ export const Title = styled.h2`
   font-size: 1.5rem;
   font-weight: 600;
   color: ${Colors.blackBluish};
-  padding-bottom: 0.15rem;
 `;
 
 export const Description = styled.p`
   margin: 0;
   color: ${Colors.blueGreyish};
   font-weight: 500;
+  padding-top: 0.25rem;
   
   @media only screen and (min-width: ${Breakpoints.mediumMobile}) {
     font-size: 1.15rem;

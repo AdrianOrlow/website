@@ -84,7 +84,7 @@ export interface ProjectType {
 
 export interface ProjectTechnologyType {
   title: string;
-  highPriority?: boolean;
+  showOnCard?: boolean;
 }
 
 export interface ProjectLinksType {
