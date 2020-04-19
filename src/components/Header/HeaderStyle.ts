@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Colors, Breakpoints } from '../../constants/index';
+import { Colors, Breakpoints } from '../../constants';
 import BarsIconSVG from '../../assets/vectors/fa-bars-solid.svg';
 
 export const Container = styled.header`

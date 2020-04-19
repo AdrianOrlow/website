@@ -12,7 +12,7 @@ export const Container = styled.section<ContainerProps>`
     padding: 3rem;
   }
   
-  @media only screen and (min-width: ${Breakpoints.mediumMobile}) {
+  @media only screen and (min-width: ${Breakpoints.mobile}) {
     padding: 4rem;
   }
   
@@ -22,7 +22,7 @@ export const Container = styled.section<ContainerProps>`
       : Colors.whiteDark;
   
     return `background: ${backgroundColor}`;
-  }}
+  }};
 `;
 
 export const Inner = styled.div`

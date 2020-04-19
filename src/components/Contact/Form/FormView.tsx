@@ -46,7 +46,7 @@ const Form: React.FC<Props> = (props: Props) => {
   }, [captchaReady]);
 
   React.useEffect(() => {
-    dirty && recaptchaRef.current.renderExplicitly();
+    dirty && !captchaReady && recaptchaRef.current.renderExplicitly();
   }, [dirty]);
 
   React.useEffect(() => {
@@ -95,7 +95,7 @@ const Form: React.FC<Props> = (props: Props) => {
       <Button
         style={{ gridArea: 'send' }}
         disabled={isSubmitting || !dirty}
-        loading={isSubmitting}
+        loading={isSubmitting ? isSubmitting : undefined}
         type="submit"
       >
         Send
