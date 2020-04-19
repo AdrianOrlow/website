@@ -8,8 +8,8 @@ import {
   Link,
   List,
   TimesIcon,
-  Button,
   ListElement,
+  BareButton,
 } from './MenuStyle';
 
 interface Props {
@@ -26,9 +26,9 @@ const Menu: React.FC<Props> = ({ show, onClose }: Props) => (
   >
     <Container>
       <Inner>
-        <Button onClick={onClose}>
+        <BareButton onClick={onClose}>
           <TimesIcon/>
-        </Button>
+        </BareButton>
         <List>
           <ListElement>
             <Link

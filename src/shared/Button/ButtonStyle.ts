@@ -94,3 +94,14 @@ export const Container = styled.button<ContainerProps>`
   ${fulfillmentStyle}
   ${sizeStyle}
 `;
+
+export const BareButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+`;

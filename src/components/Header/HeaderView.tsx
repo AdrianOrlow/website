@@ -4,10 +4,10 @@ import Logo from '../Logo';
 import {
   Container,
   Inner,
-  Button,
   BarsIcon,
 } from './HeaderStyle';
 import Menu from './Menu';
+import { BareButtonStyle } from '../../shared/Button';
 
 const Header: React.FC = () => {
   const [showMenu, setShowMenu] = React.useState<boolean>(false);
@@ -20,9 +20,9 @@ const Header: React.FC = () => {
     <Container>
       <Inner>
         <Logo/>
-        <Button onClick={handleButtonClick}>
+        <BareButtonStyle onClick={handleButtonClick}>
           <BarsIcon/>
-        </Button>
+        </BareButtonStyle>
       </Inner>
       <Menu
         show={showMenu}

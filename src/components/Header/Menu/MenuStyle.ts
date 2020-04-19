@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link as ScrollLink } from 'react-scroll';
 import { Breakpoints, Colors } from '../../../constants';
 import { SectionContainerStyle } from '../../../shared/Section';
+import { BareButtonStyle } from '../../../shared/Button';
 import TimesIconSVG from '../../../assets/vectors/fa-times.svg';
 
 interface ContainerProps {
@@ -67,15 +68,6 @@ export const Link = styled(ScrollLink)`
   }
 `;
 
-export const Button = styled.button`
-  display: block;
-  padding: 0;
-  margin: 0 0 0 auto;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-`;
-
 export const TimesIcon = styled(TimesIconSVG)`
   height: 1.25rem;
   width: 1.25rem;
@@ -84,4 +76,8 @@ export const TimesIcon = styled(TimesIconSVG)`
     height: 1.5rem;
     width: 1.5rem;
   }
+`;
+
+export const BareButton = styled(BareButtonStyle)`
+  margin-left: auto;
 `;

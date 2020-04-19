@@ -6,6 +6,16 @@ export const Container = styled.li`
   display: grid;
   border-radius: 4px;
   overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  
+  &:hover {
+    filter: brightness(97.5%);
+  }
+  
+  &:active {
+    filter: brightness(95%);
+  }
 `;
 
 export const Inner = styled.div`

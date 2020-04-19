@@ -16,8 +16,8 @@ import { Container } from './ButtonStyle';
 
 const Button: React.FC<Props> = (props: Props) => {
   const {
-    backgroundType = 'big',
-    size = 'contained',
+    backgroundType = 'contained',
+    size = 'big',
     color = 'dark',
     loading = false,
     children,

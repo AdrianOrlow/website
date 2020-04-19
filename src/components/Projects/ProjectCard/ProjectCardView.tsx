@@ -10,6 +10,7 @@ import {
   TechnologiesList,
 } from './ProjectCardStyle';
 import Tag from '../../../shared/Tag';
+import ProjectModal from '../Modal';
 
 interface Props {
   project: ProjectType;
@@ -17,7 +18,6 @@ interface Props {
 
 const ProjectCard: React.FC<Props> = ({ project }: Props) => {
   const {
-    id,
     title,
     description,
     technologies,
@@ -28,17 +28,29 @@ const ProjectCard: React.FC<Props> = ({ project }: Props) => {
     <Tag>{technology.title}</Tag>
   ));
 
+  const [showModal, setShowModal] = React.useState<boolean>(false);
+  const toggleModal = () => (
+    setShowModal(!showModal)
+  );
+
   return (
-    <Container>
-      <ProjectLogo project={project}/>
-      <Inner>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-        <TechnologiesList>
-          {technologiesList}
-        </TechnologiesList>
-      </Inner>
-    </Container>
+    <>
+      <Container onClick={toggleModal}>
+        <ProjectLogo project={project}/>
+        <Inner>
+          <Title>{title}</Title>
+          <Description>{description}</Description>
+          <TechnologiesList>
+            {technologiesList}
+          </TechnologiesList>
+        </Inner>
+      </Container>
+      <ProjectModal
+        project={project}
+        onClose={toggleModal}
+        show={showModal}
+      />
+    </>
   );
 };
 

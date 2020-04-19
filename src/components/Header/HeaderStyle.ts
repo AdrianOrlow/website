@@ -21,17 +21,6 @@ export const Inner = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-`;
-
 export const BarsIcon = styled(BarsIconSVG)`
   height: 1.25rem;
   width: 1.25rem;

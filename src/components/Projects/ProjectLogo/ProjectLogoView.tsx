@@ -9,15 +9,23 @@ import {
 
 interface Props {
   project: ProjectType;
+  withBackground?: boolean;
 }
 
-const ProjectLogo: React.FC<Props> = ({ project }: Props) => {
-  const { title, backgroundColor, imagesFolder } = project;
+const ProjectLogo: React.FC<Props> = (props: Props) => {
+  const { project, withBackground = true } = props;
+  const {
+    title,
+    backgroundColor,
+    imagesFolder,
+  } = project;
 
   const hasImageLogo = imagesFolder !== undefined;
   const children = hasImageLogo
     ? <ImageLogo project={project}/>
     : <TextLogo>{title}</TextLogo>;
+
+  if (!withBackground) return children;
 
   return (
     <Container
