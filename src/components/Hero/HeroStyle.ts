@@ -99,6 +99,10 @@ export const Actions = styled.div`
     margin-right: 0.5rem;
   }
   
+  a {
+    text-decoration: none;
+  }
+  
   @media only screen and (min-width: ${Breakpoints.mediumMobile}) {
     padding-top: 1.5rem;
     

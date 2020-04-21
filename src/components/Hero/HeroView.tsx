@@ -3,7 +3,7 @@ import { scroller } from 'react-scroll';
 
 import { Sections } from '../../constants';
 import Header from '../Header';
-import Button from '../../shared/Button';
+import Button, { ButtonStyle } from '../../shared/Button';
 
 import {
   Container,
@@ -45,11 +45,13 @@ const Hero: React.FC = () => {
             >
               Projects
             </Button>
-            <Button
-              backgroundType="outlined"
+            <ButtonStyle
+              as="a"
+              href="/cv.pdf"
+              type="outlined"
             >
               My CV
-            </Button>
+            </ButtonStyle>
           </Actions>
         </Inner>
       </Wrapper>
