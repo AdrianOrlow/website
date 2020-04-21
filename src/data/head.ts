@@ -4,7 +4,7 @@ const head: HeadType = {
   title: 'Adrian Orłów',
   description: 'Web Developer',
   keywords: 'adrian,orłów,orlow,web,developer',
-  url: 'orlow.me',
+  url: 'https://orlow.me/',
   image: '/thumbnail.png',
 };
 
