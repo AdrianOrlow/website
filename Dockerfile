@@ -8,6 +8,6 @@ RUN yarn install
 
 COPY . .
 
-RUN yarn build
+RUN -e yarn build
 
 CMD ["yarn", "start", "-p", "5000"]
