@@ -10,4 +10,4 @@ COPY . .
 
 RUN yarn build
 
-CMD ["sh", "-c", "yarn", "start", "-p", "5000"]
+CMD ["yarn", "start", "-p", "5000"]
