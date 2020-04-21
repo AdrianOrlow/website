@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormStateProxy } from 'react-hook-form';
 import Reaptcha from 'reaptcha';
+import getConfig from 'next/config';
 
 import Button from '../../../shared/Button';
 import { ContactFormData, ContactFormResult } from '../../../types';
@@ -20,6 +21,8 @@ interface Props {
   setValue(name: string, value?: string, shouldValidate?: boolean): void;
 }
 
+const { publicRuntimeConfig } = getConfig();
+
 const Form: React.FC<Props> = (props: Props) => {
   const {
     onSubmit,
@@ -29,6 +32,7 @@ const Form: React.FC<Props> = (props: Props) => {
     setValue,
   } = props;
   const { isSubmitting, dirty } = formState;
+  const recaptchaSiteKey = publicRuntimeConfig.RECAPTCHA_CLIENT_KEY;
 
   const recaptchaRef = React.createRef<Reaptcha>();
   const [captchaReady, setCaptchaReady] = React.useState<boolean>(false);
@@ -88,7 +92,7 @@ const Form: React.FC<Props> = (props: Props) => {
         theme="dark"
         onRender={handleCaptchaLoaded}
         onVerify={handleTokenVerify}
-        sitekey={process.env.RECAPTCHA_CLIENT_KEY}
+        sitekey={recaptchaSiteKey}
         ref={recaptchaRef}
         explicit
       />

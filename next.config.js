@@ -9,10 +9,12 @@ module.exports = {
 
     return config;
   },
-  env: {
+  serverRuntimeConfig: {
     SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
-    RECAPTCHA_CLIENT_KEY: process.env.RECAPTCHA_CLIENT_KEY,
     RECAPTCHA_SERVER_KEY: process.env.RECAPTCHA_SERVER_KEY,
+  },
+  publicRuntimeConfig: {
+    RECAPTCHA_CLIENT_KEY: process.env.RECAPTCHA_CLIENT_KEY,
     GA_TAG: process.env.GA_TAG,
-  }
+  },
 };

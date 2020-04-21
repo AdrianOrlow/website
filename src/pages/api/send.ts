@@ -1,9 +1,12 @@
 const sgMail = require('@sendgrid/mail');
+import getConfig from 'next/config';
 import { ContactFormData } from '../../types';
 import { composeMail, checkRecaptcha } from '../../utils';
 
+const { serverRuntimeConfig } = getConfig();
+
 export default async function(req: { body: ContactFormData }, res) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  sgMail.setApiKey(serverRuntimeConfig.SENDGRID_API_KEY);
 
   const recaptchaValid = await checkRecaptcha(req.body.recaptcha);
   if (!recaptchaValid) {
