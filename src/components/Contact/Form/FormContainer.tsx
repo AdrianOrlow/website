@@ -10,7 +10,6 @@ const Form: React.FC = () => {
   const [result, setResult] = React.useState<ContactFormResult>(initialResult);
 
   const onSubmit = handleSubmit(async (data: ContactFormData) => {
-    console.log(data);
     const res = await fetch('/api/send', {
       method: 'POST',
       headers: {
