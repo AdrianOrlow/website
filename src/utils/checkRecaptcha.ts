@@ -1,13 +1,10 @@
-import getConfig from 'next/config';
 import fetch from 'isomorphic-unfetch';
-
-const { serverRuntimeConfig } = getConfig();
 
 const API_URL = 'https://www.google.com/recaptcha/api/siteverify';
 
 const checkRecaptcha = async (recaptcha: string): Promise<boolean> => {
   const data = {
-    secret: serverRuntimeConfig.RECAPTCHA_SERVER_KEY,
+    secret: process.env.RECAPTCHA_SERVER_KEY,
     response: recaptcha,
   };
 
