@@ -1,6 +1,4 @@
-require('dotenv').config({
-  path: process.env.NODE_ENV === 'production' ? '/app/.env' : '.env'
-});
+require('dotenv').config();
 
 module.exports = {
   webpack(config) {
