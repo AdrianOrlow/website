@@ -4,10 +4,18 @@ import Tag from '../../../shared/Tag';
 
 export const Container = styled.li`
   display: grid;
+  grid-template-columns: 100%;
   border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  
+  p {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+  }
   
   &:hover {
     filter: brightness(97.5%);
@@ -43,6 +51,7 @@ export const Description = styled.p`
   color: ${Colors.blueGreyish};
   font-weight: 500;
   padding-top: 0.25rem;
+  font-size: 1.15rem;
   
   @media only screen and (min-width: ${Breakpoints.mediumMobile}) {
     font-size: 1.15rem;

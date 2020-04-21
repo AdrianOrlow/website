@@ -35,8 +35,9 @@ const Projects: React.FC<Props> = (props: Props) => {
       key={project.id}
       timeout={200}
       classNames="item"
+      unmountOnExit
     >
-      <ProjectCard key={project.id} project={project}/>
+      <ProjectCard project={project}/>
     </CSSTransition>
   ));
 

@@ -18,6 +18,7 @@ import {
 import ProjectLogo from '../ProjectLogo';
 import Tag from '../../../shared/Tag';
 import { ButtonStyle, BareButtonStyle } from '../../../shared/Button';
+import { Colors } from '../../../constants';
 
 interface Props {
   project: ProjectType;
@@ -28,11 +29,12 @@ interface Props {
 const ProjectModal: React.FC<Props> = (props: Props) => {
   const { project, onClose, show } = props;
   const {
-    backgroundColor,
     description,
     license,
     technologies,
     links,
+    backgroundColor = Colors.blueGreyish,
+    textColor = Colors.fog,
   } = project;
   const { source, demo } = links;
 
@@ -53,13 +55,13 @@ const ProjectModal: React.FC<Props> = (props: Props) => {
     >
       <Overlay onClick={handleOverlayClick}>
         <Container>
-          <Header style={{ backgroundColor }}>
+          <Header style={{ background: backgroundColor }}>
             <ProjectLogo
               project={project}
               withBackground={false}
             />
             <BareButtonStyle onClick={onClose}>
-              <TimesIcon/>
+              <TimesIcon style={{ fill: textColor }} />
             </BareButtonStyle>
           </Header>
           <Inner>
@@ -74,9 +76,9 @@ const ProjectModal: React.FC<Props> = (props: Props) => {
             </SectionWrapper>
             <SectionWrapper>
               <SectionTitle>
-                License:&nbsp;
-                <LicenseTitle>{license}</LicenseTitle>
+                License:
               </SectionTitle>
+              <LicenseTitle>{license}</LicenseTitle>
             </SectionWrapper>
             <SectionWrapper>
               <Actions>

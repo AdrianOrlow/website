@@ -6,6 +6,7 @@ import {
   Image,
   Container
 } from './ProjectLogoStyle';
+import { Colors } from '../../../constants';
 
 interface Props {
   project: ProjectType;
@@ -16,20 +17,26 @@ const ProjectLogo: React.FC<Props> = (props: Props) => {
   const { project, withBackground = true } = props;
   const {
     title,
-    backgroundColor,
     imagesFolder,
+    backgroundColor = Colors.blueGreyish,
+    textColor = Colors.fog,
   } = project;
+
+  const style = {
+    background: backgroundColor,
+    color: textColor
+  };
 
   const hasImageLogo = imagesFolder !== undefined;
   const children = hasImageLogo
     ? <ImageLogo project={project}/>
-    : <TextLogo>{title}</TextLogo>;
+    : <TextLogo style={{ color: textColor }}>{title}</TextLogo>;
 
   if (!withBackground) return children;
 
   return (
     <Container
-      style={{ backgroundColor }}
+      style={style}
       children={children}
     />
   );

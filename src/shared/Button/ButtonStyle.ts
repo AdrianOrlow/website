@@ -85,6 +85,7 @@ export const Container = styled.button<ContainerProps>`
   background: transparent;
   transition: 0.2s ease-in-out;
   cursor: pointer;
+  font-size: 1.15rem;
   
   svg {
     height: 1em;

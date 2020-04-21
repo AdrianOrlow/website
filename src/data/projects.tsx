@@ -9,7 +9,6 @@ const projects: ProjectType[] = [
     license: 'MIT',
     priority: ProjectPriority.High,
     filter: ProjectFilter.Frontend,
-    backgroundColor: '#52616D',
     links: {
       demo: 'https://l.orlow.me/files-samples',
       source: 'https://l.orlow.me/files-source',
@@ -33,6 +32,9 @@ const projects: ProjectType[] = [
       {
         title: 'Ramda',
       },
+      {
+        title: 'Dokku',
+      },
     ]
   },
   {
@@ -42,7 +44,6 @@ const projects: ProjectType[] = [
     license: 'MIT',
     priority: ProjectPriority.High,
     filter: ProjectFilter.Backend,
-    backgroundColor: '#52616D',
     links: {
       demo: 'https://l.orlow.me/files-samples',
       source: 'https://l.orlow.me/files-api',
@@ -63,6 +64,9 @@ const projects: ProjectType[] = [
       {
         title: 'Gorilla MUX',
       },
+      {
+        title: 'Dokku',
+      },
     ]
   },
   {
@@ -74,6 +78,7 @@ const projects: ProjectType[] = [
     priority: ProjectPriority.High,
     filter: ProjectFilter.Frontend,
     backgroundColor: '#f9f9f9',
+    textColor: '#000',
     links: {
       demo: 'https://l.orlow.me/mypolitics',
       source: 'https://l.orlow.me/mypolitics-source',
@@ -94,6 +99,9 @@ const projects: ProjectType[] = [
       {
         title: 'SCSS'
       },
+      {
+        title: 'ESLint'
+      },
     ]
   },
   {
@@ -103,7 +111,8 @@ const projects: ProjectType[] = [
     license: 'MIT',
     priority: ProjectPriority.Medium,
     filter: ProjectFilter.Backend,
-    backgroundColor: '#2ECC71',
+    backgroundColor: '#f9f9f9',
+    textColor: '#1d1d1d',
     links: {
       demo: 'https://l.orlow.me/mypolitics',
       source: 'https://l.orlow.me/mypolitics-api',
@@ -129,11 +138,12 @@ const projects: ProjectType[] = [
   {
     id: 5,
     title: 'OFM',
+    imagesFolder: 'ofm',
     description: 'Charity project for youth association',
     license: 'MIT',
     priority: ProjectPriority.Medium,
     filter: ProjectFilter.Frontend,
-    backgroundColor: '#2373b2',
+    backgroundColor: '#3d92b7',
     links: {
       demo: 'https://l.orlow.me/ofm',
       source: 'https://l.orlow.me/ofm-source',
@@ -153,28 +163,6 @@ const projects: ProjectType[] = [
       },
       {
         title: 'BEM',
-      },
-    ]
-  },
-  {
-    id: 6,
-    title: 'SchoolBot',
-    description: 'Facebook chat bot for schools',
-    license: 'MIT',
-    priority: ProjectPriority.Medium,
-    filter: ProjectFilter.Backend,
-    backgroundColor: '#52616D',
-    links: {
-      source: 'https://l.orlow.me/schoolbot',
-    },
-    technologies: [
-      {
-        title: 'JavaScript',
-        showOnCard: true,
-      },
-      {
-        title: 'Facebook Chat API',
-        showOnCard: true,
       },
     ]
   },
@@ -204,6 +192,9 @@ const projects: ProjectType[] = [
         title: 'CSS',
         showOnCard: true,
       },
+      {
+        title: 'Public APIs',
+      },
     ]
   },
   {
@@ -226,6 +217,9 @@ const projects: ProjectType[] = [
       {
         title: 'CSS',
         showOnCard: true,
+      },
+      {
+        title: 'RSS',
       },
     ]
   },
@@ -287,8 +281,107 @@ const projects: ProjectType[] = [
         title: 'SCSS',
         showOnCard: true,
       },
+      {
+        title: 'PHP',
+      },
     ]
-  }
+  },
+  {
+    id: 11,
+    title: 'shiftscreen API',
+    description: 'Backend for shiftscreen app',
+    license: 'Apache 2.0 with Commons Clause',
+    priority: ProjectPriority.High,
+    filter: ProjectFilter.Backend,
+    backgroundColor: '#6e79fe',
+    links: {
+      source: 'https://l.orlow.me/shiftscreen-api',
+    },
+    technologies: [
+      {
+        title: 'TypeScript',
+        showOnCard: true,
+      },
+      {
+        title: 'Nest.js',
+        showOnCard: true,
+      },
+      {
+        title: 'TypeORM',
+        showOnCard: true,
+      },
+      {
+        title: 'MySQL',
+      },
+      {
+        title: 'MinIO',
+      },
+    ]
+  },
+  {
+    id: 12,
+    title: 'Teczka Zdrowia',
+    imagesFolder: 'teczka-zdrowia',
+    description: 'Web application for doctors appointments, office and patients data management.',
+    license: 'Apache 2.0 with Commons Clause',
+    priority: ProjectPriority.Medium,
+    filter: ProjectFilter.Frontend,
+    backgroundColor: '#6a6ee1',
+    links: {
+      demo: 'https://l.orlow.me/teczka-zdrowia-demo',
+      source: 'https://l.orlow.me/teczka-zdrowia-source',
+    },
+    technologies: [
+      {
+        title: 'JavaScript',
+        showOnCard: true,
+      },
+      {
+        title: 'Vue',
+        showOnCard: true,
+      },
+      {
+        title: 'Vuex',
+        showOnCard: true,
+      },
+      {
+        title: 'SCSS'
+      },
+      {
+        title: 'PWA'
+      },
+    ]
+  },
+  {
+    id: 13,
+    title: 'Teczka Zdrowia API',
+    description: 'Teczka Zdrowia GraphQL backend',
+    license: 'Apache 2.0 with Commons Clause',
+    priority: ProjectPriority.Low,
+    filter: ProjectFilter.Backend,
+    backgroundColor: '#6a6ee1',
+    links: {
+      demo: 'https://l.orlow.me/teczka-zdrowia-demo',
+      source: 'https://l.orlow.me/teczka-zdrowia-api-source',
+    },
+    technologies: [
+      {
+        title: 'PHP',
+        showOnCard: true,
+      },
+      {
+        title: 'Laravel',
+        showOnCard: true,
+      },
+      {
+        title: 'GraphQL',
+        showOnCard: true,
+      },
+      {
+        title: 'MySQL'
+      },
+    ]
+  },
 ];
 
 /*

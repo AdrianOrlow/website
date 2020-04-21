@@ -77,7 +77,8 @@ export interface ProjectType {
   license: string;
   filter: ProjectFilter;
   priority: ProjectPriority;
-  backgroundColor: string;
+  backgroundColor?: string;
+  textColor?: string;
   technologies: ProjectTechnologyType[];
   links: ProjectLinksType;
 }

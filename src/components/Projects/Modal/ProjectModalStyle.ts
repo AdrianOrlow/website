@@ -26,10 +26,11 @@ export const Container = styled.div`
   border-radius: 4px;
   overflow: hidden;
   max-width: 90vw;
-  min-width: 15rem;
+  min-width: 80vw;
   
   @media only screen and (min-width: ${Breakpoints.mediumMobile}) {
     width: 30rem;
+    min-width: 30rem;
   }
 `;
 
@@ -70,10 +71,6 @@ export const Header = styled.div`
 export const TimesIcon = styled(TimesIconSVG)`
   height: 1rem;
   width: 1rem;
-
-  path {
-    fill: ${Colors.fog};
-  }
   
   @media only screen and (min-width: ${Breakpoints.mediumMobile}) {
     height: 1.25rem;
@@ -115,8 +112,11 @@ export const SectionTitle = styled.h3`
   }
 `;
 
-export const LicenseTitle = styled.span`
+export const LicenseTitle = styled.div`
   font-weight: 500;
+  color: ${Colors.blueGreyish};
+  font-size: 1.15rem;
+  padding-top: 0.25rem;
 `;
 
 export const Actions = styled.div`
