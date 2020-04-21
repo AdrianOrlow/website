@@ -1,11 +1,6 @@
-const nextEnv = require('next-env');
-const dotenvLoad = require('dotenv-load');
+require('dotenv').config();
 
-dotenvLoad();
-
-const withNextEnv = nextEnv();
-
-module.exports = withNextEnv({
+module.exports = {
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -20,4 +15,4 @@ module.exports = withNextEnv({
     RECAPTCHA_SERVER_KEY: process.env.RECAPTCHA_SERVER_KEY,
     GA_TAG: process.env.GA_TAG,
   }
-});
+};
