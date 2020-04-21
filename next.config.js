@@ -6,8 +6,12 @@ const webpack = require('webpack');
 
 module.exports = {
   webpack(config) {
-    config.plugins = config.plugins || [];
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
 
+    config.plugins = config.plugins || [];
     config.plugins = [
       ...config.plugins,
 
@@ -17,12 +21,7 @@ module.exports = {
       })
     ];
 
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
-
-    return config
+    return config;
   },
   env: {
     SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
