@@ -1,8 +1,8 @@
 FROM node:11-alpine
 
-WORKDIR /workspace
+WORKDIR /app
 
-COPY package.json yarn.lock /workspace/
+COPY package.json yarn.lock /app/
 
 RUN yarn install
 
