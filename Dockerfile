@@ -6,8 +6,10 @@ COPY package.json yarn.lock /app/
 
 RUN yarn install
 
-COPY . .
+COPY . /app
 
 RUN yarn build
+
+ENV NODE_ENV production
 
 CMD ["yarn", "start", "-p", "5000"]
