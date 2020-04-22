@@ -26,6 +26,10 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 `;
 
 export const Inner = styled.div`

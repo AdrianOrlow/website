@@ -32,6 +32,7 @@ export const Container = styled.section<ContainerProps>`
 export const Inner = styled.div`
   max-width: ${Breakpoints.desktop};
   margin: auto;
+  position: relative;
 `;
 
 export const Header = styled.header`
