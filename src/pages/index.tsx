@@ -7,7 +7,7 @@ import Skills from '../components/Skills';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
-ReactGA.initialize('UA-51375799-4');
+ReactGA.initialize(process.env.GA_TAG);
 
 const Main = () => (
   <main>

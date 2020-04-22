@@ -29,7 +29,7 @@ const Form: React.FC<Props> = (props: Props) => {
     setValue,
   } = props;
   const { isSubmitting, dirty } = formState;
-  const recaptchaSiteKey = '6LcIwGkUAAAAAEJk-Utt47pGGPT1U8eArUcoYC3v';
+  const recaptchaSiteKey = process.env.RECAPTCHA_CLIENT_KEY;
 
   const recaptchaRef = React.createRef<Reaptcha>();
   const [captchaReady, setCaptchaReady] = React.useState<boolean>(false);
