@@ -40,7 +40,7 @@ const fulfillmentStyle = (props: ContainerProps) => (
   props.type === 'outlined'
     ? `
       background: transparent;
-      border: 1px solid ${Colors.blueGreyish};
+      border: 2px solid ${Colors.blueGreyish};
       box-sizing: border-box;
       color: ${Colors.blueGreyish};
       
