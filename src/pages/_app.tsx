@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Router from 'next/router';
+import withGA from 'next-ga';
 import 'normalize.min.css';
+
 import '../index.css';
 import Head from '../components/Head';
 
-function App({ Component, pageProps }) {
-  return (
-    <>
-      <Head/>
-      <Component {...pageProps} />
-    </>
-  );
-}
+const enhance = (
+  withGA(process.env.GA_TAG, Router)
+);
 
-export default App;
+const App = ({ Component, pageProps }) => (
+  <Fragment>
+    <Head/>
+    <Component {...pageProps} />
+  </Fragment>
+);
+
+export default enhance(App);
