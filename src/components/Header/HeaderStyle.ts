@@ -4,6 +4,10 @@ import BarsIconSVG from '../../assets/vectors/fa-bars-solid.svg';
 
 export const Container = styled.header`
   width: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 export const Inner = styled.div`
