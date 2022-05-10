@@ -1,0 +1,72 @@
+{
+    "hero": {
+        "title": "<0>Jestem <1>Adrian</1>. Przemienię Twój pomysł w rzeczywistość</0>",
+        "contact": "Poznajmy się!",
+        "cv": "CV"
+    },
+    "skills": {
+        "title": "<0>Moje <1>supermoce</1></0>",
+        "base": {
+            "programming": {
+                "title": "Full Stack Developer",
+                "experience": "+4 lata"
+            },
+            "design": {
+                "title": "Product Designer",
+                "experience": "+2 lata"
+            }
+        },
+        "categories": {
+            "programming": {
+                "title": "Programowanie",
+                "list": "TypeScript,React,NextJS,NestJs,MongoDB,Strapi,NodeJS,WebSockets"
+            },
+            "design": {
+                "title": "Design i branding",
+                "list": "Figma,UI/UX,Product Design"
+            },
+            "soft": {
+                "title": "Soft skills",
+                "list": "Leadership,Management,Komunikacja,Product vision"
+            }
+        }
+    },
+    "projects": {
+        "title": "<0>Mówić to każdy potrafi, <1>niech przemówią fakty</1></0>",
+        "subTitle": "Bez marketingowej gadki i owijania w bawełnę. Sprawdź case studies stworzonych przeze mnie rozwiązań!",
+        "CTA": {
+            "title": "<0>To jak, <1>działamy?</1></0>",
+            "contact": "Poznajmy się!",
+            "more": "Rozwiń portfolio",
+            "github": "GitHub"
+        }
+    },
+    "references": {
+        "title": "<0>Co człowiek to opinia. <1>Ważna opinia!</1></0>",
+        "subTitle": "Nie ma nic ważniejszego niż Ty i Twój sukces. Poznaj historie osób, z którymi miałem przyjemność współpracować!",
+        "CTA": {
+            "title": "<0>Czas by znalazła się tu <1>Twoja opinia</1></0>",
+            "contact": "Poznajmy się!",
+            "offer": "Moja oferta"
+        }
+    },
+    "offer": {
+        "title": "<0><1>Jakość</1> wszystko zwycięża</0>",
+        "subTitle": "Buduję intuicyjne, estetyczne interfejsy oparte na niezawodnych technologiach. Nie ma nic ponad Twoje zadowolenie i Twoich klientów.",
+        "sections": {
+            "CTA": "Zapytaj o ofertę",
+            "web": {
+                "title": "Aplikacje internetowe",
+                "description": "<0><1>Zrealizuję dowolny pomysł od zera.</1> Od blogów i stron osobistych, przez sklepy internetowe, aż po specyficzne rozwiązania IT dla Ciebie lub Twojego produktu.<2></2><2></2>Twoją aplikację oprę na szybkich, nowoczesnych technologiach, niezawodnych w działaniu i możliwych do łatwego rozszerzeniafunkcjonalności w przyszłości.</0>"
+            },
+            "design": {
+                "title": "UI/UX Design",
+                "description": "<0><1>Intuicyjny, estetyczny design</1> skutecznie angażujący Twoich użytkowników to podstawa dobrego produktu. Zaprojektuję rozwiązanie, które będzie łatwe w użytkowaniu, przyjemne dla oka i dłużej utrzyma Twoich użytkowników na stronie.</0>"
+            },
+            "branding": {
+                "title": "Branding",
+                "description": "<0><1>Twoja marka potrzebuje dobrego brandingu</1>, czyli logo i identyfikacji wizualnej, która reprezentuje Ciebie bądź Twój produkt. Zaprojektuję rozwiązanie, które powiąże Twoje cele i wartości, a także skomunikuje Twój produkt z klientami i wyróżni go od konkurencji.</0>"
+            }
+        }
+    }
+}

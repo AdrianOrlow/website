@@ -1,29 +1,81 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "allowJs": true,
+    "alwaysStrict": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
     "lib": [
       "dom",
-      "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve"
+    "skipLibCheck": true,
+    "strict": false,
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@generated/*": [
+        "./src/generated/*"
+      ],
+      "@layout": [
+        "./src/layout"
+      ],
+      "@theme": [
+        "./src/theme"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ],
+      "@screens/*": [
+        "./src/screens/*"
+      ],
+      "@services/*": [
+        "./src/services/*"
+      ],
+      "@shared/*": [
+        "./src/shared/*"
+      ],
+      "@typeDefs/*": [
+        "./src/types/*"
+      ],
+      "@public/*": [
+        "./public/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@theme/*": [
+        "./src/theme/*"
+      ],
+      "@data/*": [
+        "./src/data/*"
+      ],
+      "@constants": [
+        "./src/constants.ts"
+      ]
+    },
+    "incremental": true
   },
   "exclude": [
     "node_modules"
   ],
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "next-env.d.ts",
+    "next.config.js",
+    "custom.d.ts"
   ]
 }

@@ -1,18 +1,13 @@
-require('dotenv').config();
+/** @type {import('next').NextConfig} */
+const withImages = require('next-images');
+const nextTranslate = require('next-translate');
 
-module.exports = {
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
-
-    return config;
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  compiler: {
+    styledComponents: true,
   },
-  env: {
-    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
-    RECAPTCHA_CLIENT_KEY: process.env.RECAPTCHA_CLIENT_KEY,
-    RECAPTCHA_SERVER_KEY: process.env.RECAPTCHA_SERVER_KEY,
-    GA_TAG: process.env.GA_TAG,
-  }
 };
+
+module.exports = withImages(nextTranslate(nextConfig));
