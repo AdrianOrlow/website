@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type TextTranslate {
+  pl String
+  en String
+}
+
+enum Language {
+  PL
+  EN
+}
+
+model Document {
+  id String @default(cuid()) @id @map("_id")
+  title TextTranslate
+  description TextTranslate
+  fileUrl String
+}
+
+model Reference {
+  id        String   @default(cuid()) @id @map("_id")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  text      TextTranslate
+  author    ReferenceAuthor
+}
+
+type ReferenceAuthor {
+  photoUrl String
+  name String
+  role String
+}
+
+model Page {
+  id        String   @default(cuid()) @id @map("_id")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  lang Language
+  type String
+  title String
+  description String
+  tags String[]
+  thumbnailUrl String
+  slug String
+  projectData ProjectData?
+  sections Section[]
+}
+
+type ProjectData {
+  shortDescription String
+  logoUrl String
+  thumbnailUrl String
+  website String
+  code String
+  technologies String[]
+  skills String[]
+}
+
+model Section {
+  id String  @default(cuid()) @id @map("_id")
+  type SectionType
+  imagesUrls String[]
+  rawText String
+  bulletPoints SectionBulletPoint
+  page Page @relation(fields: [pageId], references: [id])
+  pageId String
+}
+
+type SectionBulletPoint {
+  title String
+  subTitle String
+  points String[]
+}
+
+enum SectionType {
+  BulletPoints
+  RawText
+  Image
+}

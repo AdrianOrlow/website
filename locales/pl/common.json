@@ -1,0 +1,86 @@
+{
+    "global": {
+        "page": {
+            "type": {
+                "article": "ARTYKUŁ",
+                "case_study": "CASE STUDY"
+            }
+        }
+    },
+    "SEO": {
+        "title": "Adrian Orłów",
+        "description": "Zbudujmy produkt, który pokochają"
+    },
+    "header": {
+        "nav": {
+            "projects": "Projekty",
+            "references": "Referencje",
+            "offer": "Oferta",
+            "publications": "Publikacje"
+        },
+        "contact": "Kontakt"
+    },
+    "footer": {
+        "nav": {
+            "privacy": "Polityka Prywatności",
+            "rules": "Regulamin"
+        },
+        "contact": "Kontakt"
+    },
+    "CTABuildProduct": {
+        "title": "<0>Zbudujmy produkt, który <1>pokochają</1> Twoi klienci!</0>"
+    },
+    "contact": {
+        "form": {
+            "title": "Formularz kontaktowy",
+            "fields": {
+                "name": {
+                    "label": "Jak się do Ciebie zwracać?",
+                    "placeholder": "Anna Nowak"
+                },
+                "mail": {
+                    "label": "Twój e-mail",
+                    "placeholder": "anna@nowak.pl"
+                },
+                "phone": {
+                    "label": "Twój numer telefonu",
+                    "placeholder": "+48 123 123 123"
+                },
+                "message": {
+                    "label": "Twoja wiadomość",
+                    "placeholder": ""
+                }
+            },
+            "privacy": "<0>Administratorem Twoich danych jest Adrian Orłów. Twoje dane będą przetwarzane w celu odpowiedzi na przesłaną wiadomość. Więcej informacji uzyskasz w <1>Polityce Prywatności</1>.</0>",
+            "submit": "Poznajmy się!"
+        },
+        "alt": {
+            "title": "Wolisz tradycyjne metody?",
+            "mail": "M",
+            "phone": "T"
+        }
+    },
+    "blog": {
+        "title": "<0>Świat kreują <1>myśli</1></0>",
+        "subTitle": "Swoimi dzielę się na blogu. Tu poznasz moją opinię o strategiach biznesowych, kwestiach społecznych czy dotyczących IT",
+        "documents": {
+            "title": "Projekty innowacyjnych rozwiązań",
+            "subTitle": "Więcej niż artykuł",
+            "read": "Przeczytaj PDF"
+        },
+        "articles": {
+            "read": "Przeczytaj",
+            "loadMore": "Załaduj więcej",
+            "showMore": "Pokaż więcej"
+        }
+    },
+    "responseCodes": {
+        "100": "Wiadomość wysłana!",
+        "101": "Wystąpił błąd",
+        "102": "Błędna captcha"
+    },
+    "errorPage": {
+        "title": "Wystąpił błąd",
+        "homePage": "Strona główna"
+    }
+}

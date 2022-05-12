@@ -1,0 +1,47 @@
+{
+	"edef": {
+		"scope": "javascript,typescript",
+		"prefix": "edef",
+		"body": [
+			"export { default } from \"./${TM_DIRECTORY/^.+\\/(.*)$/$1/}View\""
+		],
+	},
+	"compf": {
+		"scope": "javascript,typescript,typescriptreact",
+		"prefix": "compf",
+		"body": [
+			"import * as React from 'react';",
+			"import { Container, Wrapper } from \"./${TM_FILENAME/View(.*)\\..+$/$1/}Style\";",
+			"",
+			"const ${TM_FILENAME/View(.*)\\..+$/$1/}: React.FC = () => {",
+			"",
+			" return (",
+			"	<Wrapper>",
+			"	  <Container>",
+			"	  </Container>",
+			"	</Wrapper>",
+			"  )",
+			"}",
+			"",
+			"export default ${TM_FILENAME/View(.*)\\..+$/$1/};"
+		],
+	},
+	"comps": {
+		"scope": "javascript,typescript",
+		"prefix": "comps",
+		"body": [
+			"import styled from 'styled-components';",
+			"import breakpoint from 'styled-components-breakpoint';",
+			"",
+			"export const Wrapper = styled.div``;",
+			"",
+			"export const Container = styled.div``;"
+		],
+	},
+	"stheme": {
+		"prefix": "stheme",
+		"body": [
+			"${({ theme }) => theme.}",
+		],
+	}
+}

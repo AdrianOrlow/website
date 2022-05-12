@@ -1,13 +1,12 @@
-import styled, { keyframes } from 'styled-components';
 import { rgba } from 'polished';
-import { Colors } from '../../constants';
+import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${Colors.fog};
-  color: ${rgba(Colors.blueGreyish, 0.75)};
+  background: ${({ theme }) => theme.colors.primaryAccent};
+  color: ${({ theme }) => rgba(theme.colors.gray, 0.75)};
   font-weight: 600;
   min-height: 25rem;
   border-radius: 0.5rem;

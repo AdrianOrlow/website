@@ -1,25 +1,21 @@
 import { MailDataRequired } from '@sendgrid/helpers/classes/mail';
-import { ContactFormData } from '../types';
-import { escapeHtml } from './index';
+import { ContactData } from '@shared/Contact/ContactUtils';
+import escapeHtml from './escapeHtml';
 
-const composeMail = (formData: ContactFormData): MailDataRequired => {
-  const {
-    name,
-    email,
-    topic,
-    message,
-  } = formData;
+const composeMail = (formData: ContactData): MailDataRequired => {
+  const { name, mail, phone, message } = formData;
 
   const escapedMessage = escapeHtml(message);
 
   return {
     to: 'adrian@orlow.me',
     from: 'contact@orlow.me',
-    replyTo: email,
-    subject: `Nowa wiadomość | ${topic}`,
+    replyTo: mail,
+    subject: `Adrian, nowa wiadomość od ${name}`,
     text: `
       Imię: ${name}
-      Email: ${name}
+      E-mail: ${mail}
+      Telefon: ${phone}
       
       ${escapedMessage}
     `,
@@ -28,12 +24,16 @@ const composeMail = (formData: ContactFormData): MailDataRequired => {
         <b>Imię:</b> ${name}
       </p>
       <p>
-        <b>Email:</b> ${name}
+        <b>E-mail:</b> ${mail}
       </p>
+      <p>
+        <b>Telefon:</b> ${phone}
+      </p>
+      <br/>
       <p>
         ${escapedMessage} 
       </p>
-    `
+    `,
   };
 };
 

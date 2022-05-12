@@ -10,11 +10,10 @@ const entityMap: EntityMap = {
   "'": '&#39;',
   '/': '&#x2F;',
   '`': '&#x60;',
-  '=': '&#x3D;'
+  '=': '&#x3D;',
 };
 
-const escapeHtml = (string: string) => (
-  string.replace(/[&<>"'`=\/]/g, (s) => entityMap[s])
-);
+const escapeHtml = (string: string) =>
+  string.replace(/[&<>"'`=\/]/g, (s) => entityMap[s]);
 
 export default escapeHtml;
