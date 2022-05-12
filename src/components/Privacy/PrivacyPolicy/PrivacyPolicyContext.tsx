@@ -36,7 +36,9 @@ const PrivacyPolicyProvider: React.FC<{ children: React.ReactNode }> = ({
   }, []);
 
   useEffect(() => {
-    saveScriptsPreferences(preferences);
+    if (preferences) {
+      saveScriptsPreferences(preferences);
+    }
   }, [preferences]);
 
   const value = {
