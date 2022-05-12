@@ -4,6 +4,7 @@ import Hero from '@components/Page/Hero';
 import ThumbnailSection from '@components/Page/ThumbnailSection';
 import { Wrapper as ThumbnailSectionWrapper } from '@components/Page/ThumbnailSection/ThumbnailSectionStyle';
 import UniversalSection from '@components/Page/UniversalSection';
+import { paths } from '@constants';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCode, faEarthEurope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,8 +16,10 @@ import Contact from '@shared/Contact';
 import CTABuildProduct from '@shared/CTABuildProduct';
 import NarrowDivider from '@shared/NarrowDivider';
 import { Section as Wrapper } from '@shared/Page';
+import useCanonicalUrl from '@utils/hooks/useCanonicalUrl';
 import { useTranslationWithFallback } from '@utils/hooks/useTranslationWithFallback';
 import { NextPage } from 'next';
+import { NextSeo } from 'next-seo';
 import getT from 'next-translate/getT';
 import Link from 'next/link';
 import { transparentize } from 'polished';
@@ -65,7 +68,19 @@ interface Props {
 
 const Page: NextPage<Props> = ({ data, documents, posts }) => {
   const { t } = useTranslationWithFallback('page');
-  const { title, thumbnailUrl, sections, type, projectData } = data;
+  const {
+    title,
+    thumbnailUrl,
+    sections,
+    type,
+    projectData,
+    description,
+    slug,
+    createdAt,
+    updatedAt,
+    tags,
+  } = data;
+  const { url } = useCanonicalUrl(paths.singlePage(slug));
   const isCaseStudy = type.toLowerCase() == 'case study';
   const skills = projectData
     ? [...projectData.technologies, ...projectData.skills]
@@ -73,6 +88,30 @@ const Page: NextPage<Props> = ({ data, documents, posts }) => {
 
   return (
     <Wrapper as="div" breakpoint="lg">
+      <NextSeo
+        title={title}
+        description={description}
+        openGraph={{
+          title,
+          description,
+          url,
+          type: 'article',
+          article: {
+            publishedTime: `${createdAt}`,
+            modifiedTime: `${updatedAt}`,
+            section: tags[0],
+            authors: ['Adrian Orłów'],
+            tags,
+          },
+          images: [
+            {
+              url: thumbnailUrl,
+              alt: title,
+              width: 1200,
+            },
+          ],
+        }}
+      />
       <Container>
         <Hero data={data} />
         {thumbnailUrl && (
