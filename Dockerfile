@@ -1,4 +1,4 @@
-FROM node:16-slim AS build
+FROM node:16.15-slim AS build
 
 ARG BASE_PATH=https://orlow.me
 ARG DATABASE_URL
