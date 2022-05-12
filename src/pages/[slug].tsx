@@ -179,7 +179,7 @@ const Page: NextPage<Props> = ({ data, documents, posts }) => {
   );
 };
 
-export async function getStaticProps<NextPageContext>({
+export async function getServerSideProps<NextPageContext>({
   query,
   params,
   locale,
@@ -220,18 +220,6 @@ export async function getStaticProps<NextPageContext>({
       data: [postData].map(toObjectWithStringTimeStamps)[0],
       posts: posts.map(toObjectWithStringTimeStamps),
     },
-    revalidate: 120,
-  };
-}
-
-export async function getStaticPaths() {
-  const pages = await prisma.page.findMany({});
-
-  return {
-    paths: pages.map(({ slug }) => ({
-      params: { slug },
-    })),
-    fallback: 'blocking',
   };
 }
 
