@@ -10,6 +10,7 @@ import useWindowScroll from '@utils/hooks/useWindowScroll';
 import { smoothScroll } from '@utils/smoothScroll';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import * as React from 'react';
 import { useState } from 'react';
 import {
@@ -29,11 +30,12 @@ import {
 library.add(faPhone, faBars, faTimes);
 
 const Header: React.FC = () => {
+  const { pathname } = useRouter();
   const { t } = useTranslationWithFallback('common');
   const { scrollY } = useWindowScroll();
   const [showNav, setShowNav] = useState<boolean>(false);
   const hideNav = () => setShowNav(false);
-  const showLanguageSelector = scrollY < 16 * 4;
+  const showLanguageSelector = scrollY < 16 * 4 && false; // temp
 
   const handleClick = (e) => {
     hideNav();
@@ -51,7 +53,12 @@ const Header: React.FC = () => {
       <Link href={paths.homeSections.offer} passHref>
         <NavLink onClick={handleClick}>{t('header.nav.offer')}</NavLink>
       </Link>
-      <Link href={paths.homeSections.publications} passHref>
+      <Link
+        href={
+          pathname === paths.home ? paths.homeSections.publications : paths.blog
+        }
+        passHref
+      >
         <NavLink onClick={handleClick}>{t('header.nav.publications')}</NavLink>
       </Link>
     </>

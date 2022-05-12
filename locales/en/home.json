@@ -1,1 +1,72 @@
-{}
+{
+    "hero": {
+        "title": "<0>I am <1>Adrian</1>. I'll turn your idea into reality</0>",
+        "contact": "Let's contact!",
+        "cv": "CV"
+    },
+    "skills": {
+        "title": "<0>My <1>superpowers</1></0>",
+        "base": {
+            "programming": {
+                "title": "Full Stack Developer",
+                "experience": "+4 years"
+            },
+            "design": {
+                "title": "Product Designer",
+                "experience": "+2 years"
+            }
+        },
+        "categories": {
+            "programming": {
+                "title": "Programming",
+                "list": "TypeScript,JavaScript,React,NextJS,NestJS,Strapi,MySQL,MongoDB,Express"
+            },
+            "design": {
+                "title": "Design & branding",
+                "list": "Figma,UI/UX,Product Design"
+            },
+            "soft": {
+                "title": "Soft skills",
+                "list": "Leadership,Management,Product vision"
+            }
+        }
+    },
+    "projects": {
+        "title": "<0>Everyone can talk, <1>let the facts speak</1></0>.",
+        "subTitle": "Without marketing gimmicks and beating around the bush. Check out case studies of solutions created by me!",
+        "CTA": {
+            "title": "<0>So, <1>interested?</1></0>",
+            "contact": "Let's contact!",
+            "offer": "My offer",
+            "github": "GitHub"
+        }
+    },
+    "references": {
+        "title": "<0>Every person is an opinion. <1>A valid opinion!</1></0>",
+        "subTitle": "There is nothing more important than you and your success. Learn the stories of the people I've had the pleasure of working with!",
+        "CTA": {
+            "title": "<0>It's time for <1>your opinion</1> to be here</0>",
+            "contact": "Let's contact!",
+            "offer": "My offer"
+        }
+    },
+    "offer": {
+        "title": "<0><1>Quality</1> trumps all</0>",
+        "subTitle": "I build intuitive, aesthetically pleasing interfaces based on reliable technologies. There is nothing above your satisfaction and your customers.",
+        "sections": {
+            "CTA": "Request a quote",
+            "web": {
+                "title": "Web applications",
+                "description": "<0><1>I will implement any idea from scratch.</1> From blogs and personal pages, to online stores, and specific IT solutions for you or your product.<2></2><2></2>I will develop your application using fast, modern technologies, reliable in operation and easy to extend functionality in the future.</0>"
+            },
+            "design": {
+                "title": "UI/UX Design",
+                "description": "<0><1>Intuitive, aesthetic design</1> effectively engaging your users is the basis of a good product. I will design a solution that will be easy to use, pleasing to the eye and will keep your users on the website longer.</0>"
+            },
+            "branding": {
+                "title": "Branding",
+                "description": "<0><1>Your brand needs good branding</1> - a logo and visual identity that represents you or your product. I will design a solution that will connect your goals and values, as well as communicate your product to your customers and differentiate it from your competitors</0>"
+            }
+        }
+    }
+}

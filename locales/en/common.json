@@ -1,1 +1,86 @@
-{}
+{
+    "global": {
+        "page": {
+            "type": {
+                "article": "ARTICLE",
+                "case_study": "CASE STUDY"
+            }
+        }
+    },
+    "SEO": {
+        "title": "Adrian Orłów",
+        "description": "Let's build a product they'll love"
+    },
+    "header": {
+        "nav": {
+            "projects": "Projects",
+            "references": "References",
+            "offer": "Offer",
+            "publications": "Blog"
+        },
+        "contact": "Contact"
+    },
+    "footer": {
+        "nav": {
+            "privacy": "Privacy policy",
+            "rules": "Rules"
+        },
+        "contact": "Contact"
+    },
+    "CTABuildProduct": {
+        "title": "<0>Let's build a product <1>they'll love!</1></0>"
+    },
+    "contact": {
+        "form": {
+            "title": "Contact form",
+            "fields": {
+                "name": {
+                    "label": "What's your name?",
+                    "placeholder": "Anne Doe"
+                },
+                "mail": {
+                    "label": "Your e-mail",
+                    "placeholder": "anne@doe.com"
+                },
+                "phone": {
+                    "label": "Your mobile number",
+                    "placeholder": "+48 123 123 123"
+                },
+                "message": {
+                    "label": "Your message",
+                    "placeholder": ""
+                }
+            },
+            "privacy": "<0>The administrator of your data is Adrian Orłów. Your data will be processed in order to respond to your message. More information can be found in <1>Privacy Policy</1>.</0>",
+            "submit": "Let's contact!"
+        },
+        "alt": {
+            "title": "Prefer traditional methods?",
+            "mail": "M",
+            "phone": "P"
+        }
+    },
+    "blog": {
+        "title": "<0>The world is created by <1>thoughts</1></0>",
+        "subTitle": "I share mine on my blog. Here you will find my opinion on business strategies, social and IT issues",
+        "documents": {
+            "title": "Innovative solutions projects",
+            "subTitle": "More than just an article",
+            "read": "Read PDF"
+        },
+        "articles": {
+            "read": "Read",
+            "loadMore": "Load more",
+            "showMore": "Show more"
+        }
+    },
+    "responseCodes": {
+        "100": "Message sent!",
+        "101": "An error has occurred",
+        "102": "Wrong captcha"
+    },
+    "errorPage": {
+        "title": "An error has occurred",
+        "homePage": "Home page"
+    }
+}

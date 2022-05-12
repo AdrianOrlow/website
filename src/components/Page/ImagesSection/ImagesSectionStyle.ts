@@ -6,8 +6,8 @@ export const Wrapper = styled.div`
   ${spacingX(-6)};
 
   img {
-    width: 32rem;
-    height: ${32 * (3 / 4)}rem;
+    width: 24rem;
+    height: ${24 * (3 / 4)}rem;
     object-fit: cover;
     display: block;
     border-radius: 2rem;
@@ -16,6 +16,12 @@ export const Wrapper = styled.div`
 
     &:nth-child(even) {
       z-index: -1;
+    }
+
+    @media only screen and (min-width: ${({ theme }) =>
+        theme.breakpoints.md}px) {
+      width: 32rem;
+      height: ${32 * (3 / 4)}rem;
     }
   }
 `;

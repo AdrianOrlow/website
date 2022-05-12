@@ -43,17 +43,43 @@ export const ArticleContainer = styled.article`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  ${spacingX(2)};
-  max-width: 48rem;
+  width: 100%;
+
+  & > a {
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.md}px) {
+      width: calc(100% - 8px);
+    }
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    ${spacingX(2)};
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+    ${spacingY(1)};
+    flex-direction: column;
+    margin: 0.5rem;
+  }
 `;
 
 export const ImageWrapper = styled.div`
+  width: 100%;
+
   img {
     display: block;
     border-radius: 2rem;
     border: 8px solid
       ${({ theme }) => transparentize(0.75, theme.colors.primaryAccent)};
     height: 15rem;
+
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.md}px) {
+      width: 100%;
+    }
   }
 `;
 
@@ -63,6 +89,8 @@ export const ArticleInner = styled.div`
   align-items: flex-start;
   margin: auto;
   ${spacingY(0.75)};
+  padding: 0 1rem;
+  width: 100%;
 `;
 
 export const ArticleTitle = styled.h4`
@@ -70,6 +98,7 @@ export const ArticleTitle = styled.h4`
   color: ${({ theme }) => theme.colors.black};
   font-weight: ${({ theme }) => theme.fontWeight.primary.bold};
   line-height: 1.2;
+  opacity: 0.9;
 `;
 
 export const ArticleDivider = styled.div`

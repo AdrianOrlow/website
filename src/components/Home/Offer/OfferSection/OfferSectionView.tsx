@@ -11,6 +11,7 @@ import {
   IconWrapper,
   ImageWrapper,
   Inner,
+  InnerWrapper,
   Title,
 } from './OfferSectionStyle';
 
@@ -32,24 +33,26 @@ const OfferSection: React.FC<Props> = ({
   return (
     <Container>
       <IconWrapper>{icon}</IconWrapper>
-      <Inner>
-        <Title>{title}</Title>
-        <Divider />
-        <Description>{description}</Description>
-        <Link href={paths.homeSections.contact} passHref>
-          <Button
-            onClick={smoothScroll}
-            size="middle"
-            background="bluish"
-            as="a"
-          >
-            {t('offer.sections.CTA')}
-          </Button>
-        </Link>
-      </Inner>
-      <ImageWrapper>
-        <img src={imageUrl} alt={title} />
-      </ImageWrapper>
+      <InnerWrapper>
+        <Inner>
+          <Title>{title}</Title>
+          <Divider />
+          <Description>{description}</Description>
+          <Link href={paths.homeSections.contact} passHref>
+            <Button
+              onClick={smoothScroll}
+              size="middle"
+              background="bluish"
+              as="a"
+            >
+              {t('offer.sections.CTA')}
+            </Button>
+          </Link>
+        </Inner>
+        <ImageWrapper>
+          <img src={imageUrl} alt={title} />
+        </ImageWrapper>
+      </InnerWrapper>
     </Container>
   );
 };

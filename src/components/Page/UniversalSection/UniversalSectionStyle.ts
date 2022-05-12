@@ -13,13 +13,22 @@ export const Container = styled.div`
 
 export const RawText = styled.div`
   width: 100%;
-  line-height: 1.5;
+  line-height: 1.66;
+  max-width: 700px;
+  padding: 0 1rem;
 
   img,
   video {
-    width: 75%;
+    width: 100%;
     height: auto;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
+    margin: 1em 0;
+    border: 1px solid rgba(0, 0, 0, 0.025);
+
+    @media only screen and (min-width: ${({ theme }) =>
+        theme.breakpoints.md}px) {
+      width: 75%;
+    }
   }
 
   blockquote {
@@ -106,7 +115,13 @@ export const RawText = styled.div`
   h4,
   h5,
   h6 {
-    margin: revert;
+    margin-top: 1em;
+    margin-bottom: -0.5em;
+  }
+
+  h2,
+  h2 {
+    color: ${({ theme }) => theme.colors.primary};
   }
 
   pre,

@@ -9,15 +9,16 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem;
   text-align: center;
   max-width: ${({ theme }) => theme.breakpoints.lg}px;
-  border-radius: 6rem;
   background: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.light};
   width: 100%;
-  font-size: 3rem;
+  font-size: 2rem;
+  padding: 3rem;
+  border-radius: 3rem;
   font-weight: ${({ theme }) => theme.fontWeight.primary.bold};
+  margin: 0.5rem;
 
   span {
     color: ${({ theme }) => theme.colors.primary};
@@ -37,5 +38,11 @@ export const Container = styled.div`
       opacity: 0.2;
       z-index: -1;
     }
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    font-size: 3rem;
+    padding: 4rem;
+    border-radius: 6rem;
   }
 `;

@@ -13,17 +13,34 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  ${spacingX(2)};
+  flex-direction: column;
+  ${spacingY(1.5)};
   width: 100%;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    ${spacingX(2)};
+    flex-direction: row;
+  }
 `;
 
 export const Col = styled.div`
   display: flex;
   flex-direction: column;
-  ${spacingY(3)};
+  ${spacingY(1.5)};
   width: 100%;
 
-  &:nth-child(2) {
-    margin-top: 3rem;
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    ${spacingY(3)};
+
+    &:nth-child(2) {
+      margin-top: 3rem;
+    }
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+    & > *:nth-child(even) {
+      margin-left: auto;
+      width: 100%;
+    }
   }
 `;

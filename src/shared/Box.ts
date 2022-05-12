@@ -6,10 +6,15 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 2rem;
   border: 8px solid ${({ theme }) => transparentize(0.95, theme.colors.black)};
-  ${spacingY(1.5)};
+  ${spacingY(1)};
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    padding: 3rem;
+    ${spacingY(1.5)};
+  }
 `;
 
 export const BoxDivider = styled.div`

@@ -19,7 +19,7 @@
         "categories": {
             "programming": {
                 "title": "Programowanie",
-                "list": "TypeScript,React,NextJS,NestJs,MongoDB,Strapi,NodeJS,WebSockets"
+                "list": "TypeScript,JavaScript,React,NextJS,NestJS,Strapi,MySQL,MongoDB,Express"
             },
             "design": {
                 "title": "Design i branding",
@@ -27,7 +27,7 @@
             },
             "soft": {
                 "title": "Soft skills",
-                "list": "Leadership,Management,Komunikacja,Product vision"
+                "list": "Leadership,Management,Product vision"
             }
         }
     },
@@ -37,7 +37,7 @@
         "CTA": {
             "title": "<0>To jak, <1>działamy?</1></0>",
             "contact": "Poznajmy się!",
-            "more": "Rozwiń portfolio",
+            "offer": "Zobacz ofertę",
             "github": "GitHub"
         }
     },

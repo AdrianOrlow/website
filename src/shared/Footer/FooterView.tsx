@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '@shared/Button';
 import { Section } from '@shared/Page';
 import { useTranslationWithFallback } from '@utils/hooks/useTranslationWithFallback';
+import { smoothScroll } from '@utils/smoothScroll';
 import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
@@ -19,9 +20,6 @@ const Footer: React.FC = () => {
     <>
       <Link href={paths.privacy} passHref>
         <NavLink>{t('footer.nav.privacy')}</NavLink>
-      </Link>
-      <Link href={paths.rules} passHref>
-        <NavLink>{t('footer.nav.rules')}</NavLink>
       </Link>
     </>
   );
@@ -41,20 +39,23 @@ const Footer: React.FC = () => {
                 />
               </Logo>
             </Link>
-            <Nav>{nav}</Nav>
-            <Link href={paths.homeSections.contact} passHref>
-              <Button
-                background="whiteish"
-                as="a"
-                beforeIcon={<FontAwesomeIcon icon={faPhone} />}
-              >
-                {t('footer.contact')}
-              </Button>
-            </Link>
+            <Nav>
+              {nav}
+              <Link href={paths.homeSections.contact} passHref>
+                <Button
+                  background="whiteish"
+                  as="a"
+                  beforeIcon={<FontAwesomeIcon icon={faPhone} />}
+                  onClick={smoothScroll}
+                >
+                  {t('footer.contact')}
+                </Button>
+              </Link>
+            </Nav>
           </Container>
         </Section>
       </Wrapper>
-      <Wrapper color="black">
+      {/* <Wrapper color="black">
         <Section>
           <Container style={{ padding: '1.5rem 0' }}>
             <Image
@@ -65,7 +66,7 @@ const Footer: React.FC = () => {
             />
           </Container>
         </Section>
-      </Wrapper>
+      </Wrapper> */}
     </>
   );
 };

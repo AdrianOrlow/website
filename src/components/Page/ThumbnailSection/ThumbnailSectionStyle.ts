@@ -18,7 +18,13 @@ export const ImageWrapper = styled.div`
 
 export const BackgroundImage = styled.img`
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 150%;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    top: 50%;
+    height: unset;
+  }
 `;

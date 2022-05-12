@@ -41,13 +41,17 @@ export const Actions = styled.div`
 `;
 
 export const TagsWrapper = styled.div`
-  display: flex;
+  display: block;
   ${spacingX(0.5)}
+  ${spacingY(0.5)}
   margin-top: 1rem;
+  width: 100%;
+  margin-bottom: -0.5rem;
+  margin-right: -0.5rem;
 `;
 
 export const Tag = styled.span`
-  display: flex;
+  display: inline-block;
   padding: 0.5rem;
   border-radius: 0.25rem;
   background: ${({ theme }) => transparentize(0.9, theme.colors.primary)};

@@ -18,6 +18,7 @@ export const Container = styled.div`
   max-width: 992px;
   position: relative;
   ${spacingY(2)};
+  margin: 0 0.5rem;
 
   ${breakpoint('sm')(css`
     padding: 3rem;
@@ -34,6 +35,10 @@ export const Container = styled.div`
     border-radius: inherit;
     z-index: -1;
   }
+
+  @media only screen and (max-width: 380px) {
+    border-radius: 3rem;
+  }
 `;
 
 export const Header = styled.div`
@@ -41,11 +46,15 @@ export const Header = styled.div`
   justify-content: center;
   align-items: center;
   ${spacingX(1.25)};
-  font-size: 1rem;
+  font-size: 1.5rem;
+  flex-direction: column;
+  text-align: center;
 
-  ${breakpoint('md')(css`
+  ${breakpoint('lg')(css`
     font-size: 1.5rem;
+    flex-direction: row;
     ${spacingX(1.5)};
+    text-align: left;
   `)}
 `;
 
@@ -53,7 +62,6 @@ export const HeaderTitle = styled.h2`
   margin: 0;
   color: ${({ theme }) => theme.colors.light};
   font-weight: ${({ theme }) => theme.fontWeight.primary.bold};
-  text-align: left;
 
   span {
     position: relative;
@@ -85,6 +93,10 @@ export const HeaderIconWrapper = styled.div`
   font-size: 1.75em;
   background: ${({ theme }) => transparentize(0.9, theme.colors.primary)};
   color: ${({ theme }) => theme.colors.primary};
+
+  @media only screen and (max-width: 380px) {
+    display: none;
+  }
 `;
 
 export const DividerVector = styled.img`

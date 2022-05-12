@@ -1,4 +1,12 @@
 {
+    "global": {
+        "page": {
+            "type": {
+                "article": "ARTYKUŁ",
+                "case_study": "CASE STUDY"
+            }
+        }
+    },
     "SEO": {
         "title": "Adrian Orłów",
         "description": "Zbudujmy produkt, który pokochają"
@@ -43,6 +51,7 @@
                     "placeholder": ""
                 }
             },
+            "privacy": "<0>Administratorem Twoich danych jest Adrian Orłów. Twoje dane będą przetwarzane w celu odpowiedzi na przesłaną wiadomość. Więcej informacji uzyskasz w <1>Polityce Prywatności</1>.</0>",
             "submit": "Poznajmy się!"
         },
         "alt": {
@@ -61,7 +70,17 @@
         },
         "articles": {
             "read": "Przeczytaj",
-            "more": "Załaduj więcej"
+            "loadMore": "Załaduj więcej",
+            "showMore": "Pokaż więcej"
         }
+    },
+    "responseCodes": {
+        "100": "Wiadomość wysłana!",
+        "101": "Wystąpił błąd",
+        "102": "Błędna captcha"
+    },
+    "errorPage": {
+        "title": "Wystąpił błąd",
+        "homePage": "Strona główna"
     }
 }

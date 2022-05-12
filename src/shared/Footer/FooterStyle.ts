@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { spacingX } from '../../utils/stylesUtils';
+import { spacingX, spacingY } from '../../utils/stylesUtils';
 import { DefaultTheme } from './../../theme/styled.d';
 
 export const Wrapper = styled.div<{ color?: typeof DefaultTheme['color'] }>`
@@ -12,6 +12,11 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 2rem 1rem;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+    flex-direction: column;
+    ${spacingY(1)};
+  }
 `;
 
 export const NavLink = styled.a`
@@ -19,6 +24,7 @@ export const NavLink = styled.a`
   font-weight: ${({ theme }) => theme.fontWeight.primary.regular};
   text-decoration: none;
   cursor: pointer;
+  text-align: center;
 
   &:hover {
     text-decoration: underline;
@@ -27,6 +33,7 @@ export const NavLink = styled.a`
 
 export const Nav = styled.nav`
   display: flex;
+  align-items: center;
   ${spacingX(2)};
 `;
 

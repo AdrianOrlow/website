@@ -57,4 +57,8 @@ export const Description = styled.div`
     opacity: 0.5;
     transform: translateY(50%);
   }
+
+  a {
+    color: ${({ theme }) => theme.colors.primary};
+  }
 `;

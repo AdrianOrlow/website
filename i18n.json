@@ -1,9 +1,8 @@
 {
-    "locales": ["pl", "en"],
+    "locales": ["pl"],
     "defaultLocale": "pl",
     "pages": {
-      "*": ["common"],
-      "/": ["home"],
-      "/*": ["page"]
+      "*": ["common", "page"],
+      "/": ["home"]
     }
   }

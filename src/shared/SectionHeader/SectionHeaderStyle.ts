@@ -3,10 +3,14 @@ import { spacingY } from '@utils/stylesUtils';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 100%;
+  width: calc(100% - 2rem)
   display: flex;
   justify-content: flex-start;
   text-align: left;
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+    margin: 0 1rem;
+  }
 `;
 
 export const Container = styled.div<{ hasTagline?: boolean }>`

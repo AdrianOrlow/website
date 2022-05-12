@@ -1,3 +1,4 @@
+import { Box } from '@shared/Box';
 import { Section } from '@shared/Page';
 import { spacingX, spacingY } from '@utils/stylesUtils';
 import styled from 'styled-components';
@@ -8,7 +9,23 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  ${spacingX(3)};
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    ${spacingX(3)};
+
+    ${Box}:first-child {
+      min-width: 30rem;
+    }
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+    ${spacingY(1)};
+    flex-direction: column;
+
+    ${Box} {
+      width: 100%;
+    }
+  }
 `;
 
 export const Form = styled.form`
@@ -57,5 +74,11 @@ export const SocialContactLink = styled.a`
   svg {
     font-size: 1.5rem;
     color: ${({ theme }) => theme.colors.light};
+  }
+`;
+
+export const PrivacyInfo = styled.div`
+  a {
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;

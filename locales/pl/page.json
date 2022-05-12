@@ -1,1 +1,10 @@
-{}
+{
+    "skills": {
+        "title": "Technologie i umiejętności"
+    },
+    "checkLive": {
+        "title": "Sprawdź na żywo!",
+        "website": "Strona internetowa",
+        "code": "Kod źródłowy"
+    }
+}

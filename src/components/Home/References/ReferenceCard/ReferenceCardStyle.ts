@@ -7,7 +7,11 @@ export const Wrapper = styled.div`
   background: ${({ theme }) =>
     mix(0.025, theme.colors.black, theme.colors.light)};
   border: 8px solid ${({ theme }) => transparentize(0.9, theme.colors.primary)};
-  padding: 2rem;
+  padding: 1.5rem;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    padding: 2rem;
+  }
 `;
 
 export const Container = styled.div`
@@ -18,14 +22,26 @@ export const Container = styled.div`
 
 export const Inner = styled.div`
   display: flex;
-  ${spacingX(2)}
+  flex-direction: column;
+  ${spacingY(1)};
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    ${spacingX(2)}
+    ${spacingY(0)};
+    flex-direction: row;
+  }
 `;
 
 export const Footer = styled.div`
   display: flex;
   justify-content: center;
-  margin-left: auto;
+  margin-right: auto;
   ${spacingX(0.5)}
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    margin-left: auto;
+    margin-right: 0;
+  }
 `;
 
 export const IconWrapper = styled.div`
@@ -36,8 +52,11 @@ export const IconWrapper = styled.div`
   width: 3rem;
   border-radius: 3rem;
   flex-shrink: 0;
-  outline: 8px solid ${({ theme }) => transparentize(0.9, theme.colors.primary)};
+
+  box-shadow: 0 0 0 8px
+    ${({ theme }) => transparentize(0.9, theme.colors.primary)};
   background: ${({ theme }) => theme.colors.primary};
+  transform: translateZ(0);
 
   svg {
     height: 1.5rem;

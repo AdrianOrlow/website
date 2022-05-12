@@ -4,7 +4,28 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  ${spacingX(3)};
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    ${spacingX(3)};
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+    ${spacingX(1.5)};
+    margin: 0 0.5rem;
+  }
+`;
+
+export const InnerWrapper = styled.div`
+  display: flex;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    ${spacingX(3)};
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.md}px) {
+    ${spacingY(2)};
+    flex-direction: column;
+  }
 `;
 
 export const IconWrapper = styled.div`
@@ -13,20 +34,36 @@ export const IconWrapper = styled.div`
   align-items: center;
   flex-shrink: 0;
   border-radius: 8rem;
-  height: 8rem;
-  width: 8rem;
+  height: 4rem;
+  width: 4rem;
   background: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.light};
-  outline: 16px solid
+  box-shadow: 0 0 0 8px
     ${({ theme }) => transparentize(0.9, theme.colors.primary)};
 
   img {
-    height: 4rem;
-    width: 4rem;
+    height: 2rem;
+    width: 2rem;
   }
 
   svg {
-    font-size: 3.5rem;
+    font-size: 1.75rem;
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    height: 8rem;
+    width: 8rem;
+    box-shadow: 0 0 0 16px
+      ${({ theme }) => transparentize(0.9, theme.colors.primary)};
+
+    img {
+      height: 4rem;
+      width: 4rem;
+    }
+
+    svg {
+      font-size: 3.5rem;
+    }
   }
 `;
 
@@ -55,14 +92,21 @@ export const Description = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  width: 25%;
+  width: 100%;
+  max-width: 18rem;
 
   img {
+    width: 100%;
     display: block;
     border-radius: 3rem;
     object-fit: cover;
-    outline: 8px solid
+    box-shadow: 0 0 0 8px
       ${({ theme }) => transparentize(0.9, theme.colors.primary)};
+  }
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoints.md}px) {
+    width: 25%;
+    min-width: 25%;
   }
 `;
 

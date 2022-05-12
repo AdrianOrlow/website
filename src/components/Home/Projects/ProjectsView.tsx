@@ -71,7 +71,6 @@ const Projects: React.FC<Props> = ({ data }) => {
                   {t('projects.CTA.contact')}
                 </Button>
               </Link>
-              <Button background="bluish">{t('projects.CTA.more')}</Button>
               <Link href="https://github.com/AdrianOrlow" passHref>
                 <Button
                   as="a"
