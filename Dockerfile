@@ -4,7 +4,7 @@ ARG BASE_PATH=https://orlow.me
 
 ENV BASE_PATH ${BASE_PATH}
 
-RUN apt-get update && apt-get install ibglu1 libxi6 libgconf-2-4 libssl-dev ca-certificates -y
+RUN apt-get update && apt-get install libglu1 libxi6 libgconf-2-4 libssl-dev ca-certificates -y
 
 WORKDIR /app
 
