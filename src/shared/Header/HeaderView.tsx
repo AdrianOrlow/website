@@ -35,7 +35,7 @@ const Header: React.FC = () => {
   const { scrollY } = useWindowScroll();
   const [showNav, setShowNav] = useState<boolean>(false);
   const hideNav = () => setShowNav(false);
-  const showLanguageSelector = scrollY < 16 * 4 && false; // temp
+  const showLanguageSelector = scrollY < 16 * 4;
 
   const handleClick = (e) => {
     hideNav();
