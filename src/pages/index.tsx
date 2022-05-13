@@ -59,7 +59,7 @@ const Home: NextPage<Props> = ({ references, documents, projects, posts }) => {
   );
 };
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale }) {
   const t = await getT(locale, 'common');
 
   const data = await Promise.all([
@@ -92,7 +92,6 @@ export async function getStaticProps({ locale }) {
       posts,
       documents,
     },
-    revalidate: 120,
   };
 }
 

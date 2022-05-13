@@ -17,15 +17,17 @@ const Head: React.FC = () => (
     <NextHead>
       <HeadFonts />
       <HeadManifest />
-      <script>
-        {`
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'G-023YDH62HR');
-        `}
-      </script>
+        `,
+        }}
+      />
     </NextHead>
     <HeadSEO />
     <ThirdPartyScript scriptKey="googleanalytics" />

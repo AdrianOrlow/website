@@ -27,7 +27,7 @@ const BlogPage: NextPage<Props> = ({ posts, documents }) => {
   );
 };
 
-export async function getStaticProps<NextPageContext>({ locale }) {
+export async function getServerSideProps<NextPageContext>({ locale }) {
   const t = await getT(locale, 'common');
 
   const [documents, posts] = await Promise.all([
@@ -46,7 +46,6 @@ export async function getStaticProps<NextPageContext>({ locale }) {
       documents,
       posts: posts.map(toObjectWithStringTimeStamps),
     },
-    revalidate: 120,
   };
 }
 

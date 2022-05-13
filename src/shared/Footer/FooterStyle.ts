@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { spacingX, spacingY } from '../../utils/stylesUtils';
-import { DefaultTheme } from './../../theme/styled.d';
 
-export const Wrapper = styled.div<{ color?: typeof DefaultTheme['color'] }>`
+export const Wrapper = styled.div<{ color?: string }>`
   width: 100%;
   background: ${({ theme, color = 'primary' }) => theme.colors[color]};
 `;
