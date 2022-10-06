@@ -16,6 +16,9 @@ const nextConfig = {
     RECAPTCHA_CLIENT_KEY: process.env.RECAPTCHA_CLIENT_KEY,
     GA_TAG: process.env.GA_TAG,
   },
+  images: {
+    domains: ['orlow.fra1.cdn.digitaloceanspaces.com', 'orlow.fra1.digitaloceanspaces.com'],
+  },
 };
 
 module.exports = withImages(nextTranslate(nextConfig));
