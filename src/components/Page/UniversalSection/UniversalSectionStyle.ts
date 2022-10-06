@@ -14,7 +14,7 @@ export const Container = styled.div`
 export const RawText = styled.div`
   width: 100%;
   line-height: 1.66;
-  max-width: 700px;
+  max-width: min(700px, 100vw);
   padding: 0 1rem;
 
   img,
