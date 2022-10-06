@@ -1,5 +1,4 @@
 import Blog from '@components/Home/Blog';
-import { BLOG_TAKE } from '@components/Home/Blog/BlogUtils';
 import { Document, Page } from '@prisma/client';
 import prisma, { toObjectWithStringTimeStamps } from '@services/prisma';
 import { Section as Wrapper } from '@shared/Page';
@@ -37,7 +36,6 @@ export async function getServerSideProps<NextPageContext>({ locale }) {
         lang: locale.toUpperCase(),
         type: t('global.page.type.article'),
       },
-      take: BLOG_TAKE,
     }),
   ]);
 

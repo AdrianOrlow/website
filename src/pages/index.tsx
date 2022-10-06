@@ -59,7 +59,7 @@ const Home: NextPage<Props> = ({ references, documents, projects, posts }) => {
   );
 };
 
-export async function getServerSideProps({ locale }) {
+export async function getStaticProps({ locale }) {
   const t = await getT(locale, 'common');
 
   const data = await Promise.all([
@@ -77,6 +77,9 @@ export async function getServerSideProps({ locale }) {
         type: t('global.page.type.article'),
       },
       take: BLOG_TAKE,
+      orderBy: {
+        createdAt: 'desc',
+      },
     }),
   ]);
 
@@ -92,6 +95,7 @@ export async function getServerSideProps({ locale }) {
       posts,
       documents,
     },
+    revalidate: 60 * 5, // 5 minutes in seconds
   };
 }
 
