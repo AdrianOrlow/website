@@ -102,6 +102,7 @@ export const RawText = styled.div`
     padding: 1rem;
     display: flex;
     border-radius: 1rem;
+    overflow: auto;
   }
 
   a {
